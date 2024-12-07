@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,12 +114,15 @@
         }
     </style>
 </head>
+
 <body class="min-h-screen bg-background font-sans antialiased">
     <div class="container mx-auto px-4 py-8">
         <header class="mb-8">
-            <h1 class="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">Phân tích Hình ảnh Chuyên sâu AI</h1>
+            <h1
+                class="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+                Phân tích Hình ảnh Chuyên sâu AI</h1>
         </header>
-        
+
         <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <section class="space-y-6">
                 <div class="bg-card text-card-foreground rounded-lg shadow-lg p-6">
@@ -127,10 +131,12 @@
                         <div>
                             <label for="imageUpload" class="block text-sm font-medium mb-2">Tải lên hình ảnh:</label>
                             <div class="flex items-center justify-center w-full">
-                                <label for="imageUpload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors duration-200">
+                                <label for="imageUpload"
+                                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors duration-200">
                                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                         <i data-lucide="upload-cloud" class="w-8 h-8 mb-3 text-primary"></i>
-                                        <p class="mb-2 text-sm"><span class="font-semibold">Nhấp để tải lên</span> hoặc kéo và thả</p>
+                                        <p class="mb-2 text-sm"><span class="font-semibold">Nhấp để tải lên</span> hoặc
+                                            kéo và thả</p>
                                         <p class="text-xs text-muted-foreground">PNG, JPG hoặc GIF (Tối đa 10MB)</p>
                                     </div>
                                     <input id="imageUpload" type="file" class="hidden" accept="image/*" />
@@ -138,15 +144,20 @@
                             </div>
                         </div>
                         <div id="imagePreview" class="hidden">
-                            <img id="previewImage" src="" alt="Xem trước" class="max-w-full h-auto rounded-lg shadow-md">
+                            <img id="previewImage" src="" alt="Xem trước"
+                                class="max-w-full h-auto rounded-lg shadow-md">
                         </div>
                         <div>
-                            <label for="promptInput" class="block text-sm font-medium mb-2">Nhập prompt mô tả hình ảnh:</label>
-                            <textarea id="promptInput" rows="3" class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200" placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
+                            <label for="promptInput" class="block text-sm font-medium mb-2">Nhập prompt mô tả hình
+                                ảnh:</label>
+                            <textarea id="promptInput" rows="3"
+                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200"
+                                placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
                         </div>
                         <div>
                             <label for="analysisType" class="block text-sm font-medium mb-2">Loại phân tích:</label>
-                            <select id="analysisType" class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
+                            <select id="analysisType"
+                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
                                 <option value="general">Phân tích tổng quát</option>
                                 <option value="objects">Nhận diện đối tượng</option>
                                 <option value="text">Nhận diện văn bản</option>
@@ -161,15 +172,18 @@
                         </div>
                         <div>
                             <label for="detailLevel" class="block text-sm font-medium mb-2">Mức độ chi tiết:</label>
-                            <input type="range" id="detailLevel" min="1" max="5" value="3" class="w-full accent-primary">
+                            <input type="range" id="detailLevel" min="1" max="5" value="3"
+                                class="w-full accent-primary">
                             <div class="flex justify-between text-xs text-muted-foreground">
                                 <span>Cơ bản</span>
                                 <span>Chi tiết</span>
                             </div>
                         </div>
                         <div>
-                            <label for="languageStyle" class="block text-sm font-medium mb-2">Phong cách ngôn ngữ:</label>
-                            <select id="languageStyle" class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
+                            <label for="languageStyle" class="block text-sm font-medium mb-2">Phong cách ngôn
+                                ngữ:</label>
+                            <select id="languageStyle"
+                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
                                 <option value="academic">Học thuật</option>
                                 <option value="conversational">Đàm thoại</option>
                                 <option value="technical">Kỹ thuật</option>
@@ -178,21 +192,23 @@
                         </div>
                         <div>
                             <label for="outputFormat" class="block text-sm font-medium mb-2">Định dạng kết quả:</label>
-                            <select id="outputFormat" class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
+                            <select id="outputFormat"
+                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
                                 <option value="paragraph">Đoạn văn</option>
                                 <option value="bullet">Danh sách gạch đầu dòng</option>
                                 <option value="table">Bảng</option>
                                 <option value="json">JSON</option>
                             </select>
                         </div>
-                        <button id="analyzeButton" class="w-full flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
+                        <button id="analyzeButton"
+                            class="w-full flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
                             <i data-lucide="search" class="w-5 h-5 mr-2"></i>
                             Phân tích Hình ảnh
                         </button>
                     </div>
                 </div>
             </section>
-            
+
             <section class="space-y-6">
                 <div class="bg-card text-card-foreground rounded-lg shadow-lg p-6">
                     <h2 class="text-2xl font-semibold mb-4">Kết quả Phân tích</h2>
@@ -212,15 +228,15 @@
 
     <script>
         lucide.createIcons();
-        
+
         const API_KEY = 'AIzaSyBQZMlCQTsaRcGMtBufDmJey6L6R6cV2SA';
         const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent';
 
-        document.getElementById('imageUpload').addEventListener('change', function(event) {
+        document.getElementById('imageUpload').addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     document.getElementById('previewImage').src = e.target.result;
                     document.getElementById('imagePreview').classList.remove('hidden');
                 }
@@ -228,7 +244,7 @@
             }
         });
 
-        document.getElementById('analyzeButton').addEventListener('click', async function() {
+        document.getElementById('analyzeButton').addEventListener('click', async function () {
             const imageInput = document.getElementById('imageUpload');
             const promptInput = document.getElementById('promptInput');
             const analysisType = document.getElementById('analysisType').value;
@@ -258,7 +274,7 @@
                     body: JSON.stringify({
                         contents: [{
                             parts: [
-                                {text: prompt},
+                                { text: prompt },
                                 {
                                     inline_data: {
                                         mime_type: imageInput.files[0].type,
@@ -303,9 +319,9 @@
 
         function generatePrompt(userPrompt, analysisType, detailLevel, languageStyle, outputFormat) {
             let basePrompt = "Bạn là một chuyên gia phân tích hình ảnh có kinh nghiệm. Hãy phân tích hình ảnh sau đây và cung cấp thông tin chi tiết. ";
-            
+
             basePrompt += "QUAN TRỌNG: Phản hồi của bạn PHẢI HOÀN TOÀN bằng tiếng Việt. KHÔNG sử dụng bất kỳ từ tiếng Anh nào trong phân tích của bạn. ";
-            
+
             switch (analysisType) {
                 case 'objects':
                     basePrompt += "Tập trung vào việc nhận diện và mô tả chi tiết các đối tượng chính trong hình. Liệt kê các đối tượng và mô tả vị trí, kích thước, màu sắc của chúng. Phân tích mối quan hệ giữa các đối tượng nếu có.";
@@ -431,7 +447,7 @@
             let html = '<div class="object-distribution">';
             html += '<canvas id="objectChart"></canvas>';
             html += '</div>';
-            
+
             // Sử dụng Chart.js để tạo biểu đồ
             setTimeout(() => {
                 const ctx = document.getElementById('objectChart').getContext('2d');
@@ -466,7 +482,7 @@
             let html = '<div class="emotion-chart">';
             html += '<canvas id="emotionChart"></canvas>';
             html += '</div>';
-            
+
             // Sử dụng Chart.js để tạo biểu đồ
             setTimeout(() => {
                 const ctx = document.getElementById('emotionChart').getContext('2d');
@@ -504,13 +520,18 @@
 
         function extractObjectsFromAnalysis(analysisResult) {
             // Triển khai logic để trích xuất đối tượng và số lượng từ kết quả phân tích
-            return {'Người': 3, 'Cây': 2, 'Xe': 1, 'Tòa nhà': 4};
+            return { 'Người': 3, 'Cây': 2, 'Xe': 1, 'Tòa nhà': 4 };
         }
 
         function extractEmotionsFromAnalysis(analysisResult) {
             // Triển khai logic để trích xuất cảm xúc và cường độ từ kết quả phân tích
-            return {'Hạnh phúc': 4, 'Buồn': 1, 'Tức giận': 2, 'Ngạc nhiên': 3, 'Sợ hãi': 1};
+            return { 'Hạnh phúc': 4, 'Buồn': 1, 'Tức giận': 2, 'Ngạc nhiên': 3, 'Sợ hãi': 1 };
         }
     </script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>
