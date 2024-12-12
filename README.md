@@ -87,7 +87,8 @@ Phân tích Hình ảnh Chuyên sâu AI là một ứng dụng web tiên tiến 
 Chúng tôi hoan nghênh mọi đóng góp để cải thiện Phân tích Hình ảnh Chuyên sâu AI! Hãy:
 
 1. Fork dự án
-2. Mở issues
+2. Live Demo here: [Deeplook-image-AI](https://deeplook-image-ai.vercel.app)
+3. Mọi thắc mắc xin hãy mở Issues
 
 
 ---
