@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi" class="h-full bg-gray-50">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,138 +36,144 @@
         :root {
             --transition-speed: 0.3s;
         }
-
         .animate-fade-in {
             animation: fadeIn var(--transition-speed) ease-in-out;
         }
-
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         .loading-wave {
             width: 5px;
-            height: 100px;
+            height: 60px;
             background: linear-gradient(45deg, #3B82F6, #60A5FA);
             margin: 10px;
             animation: wave 1s linear infinite;
             border-radius: 20px;
         }
-
         .loading-wave:nth-child(2) {
             animation-delay: 0.1s;
         }
-
         .loading-wave:nth-child(3) {
             animation-delay: 0.2s;
         }
-
         .loading-wave:nth-child(4) {
             animation-delay: 0.3s;
         }
-
         .loading-wave:nth-child(5) {
             animation-delay: 0.4s;
         }
-
         @keyframes wave {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(0);
-            }
+            0% { transform: scale(0); }
+            50% { transform: scale(1); }
+            100% { transform: scale(0); }
         }
-
         .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
+            width: 4px;
         }
-
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background-color: #3B82F6;
             border-radius: 20px;
         }
-
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background-color: #2563EB;
         }
+        .markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .markdown-content h1 { font-size: 1.5em; }
+        .markdown-content h2 { font-size: 1.3em; }
+        .markdown-content h3 { font-size: 1.1em; }
+        .markdown-content ul, .markdown-content ol {
+            padding-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        .markdown-content li {
+            margin-bottom: 0.5em;
+        }
+        .markdown-content p {
+            margin-bottom: 1em;
+        }
+        .markdown-content table {
+            border-collapse: collapse;
+            margin-bottom: 1em;
+            width: 100%;
+        }
+        .markdown-content th, .markdown-content td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 0.9em;
+        }
+        .markdown-content th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        @media (max-width: 640px) {
+            .markdown-content table {
+                font-size: 0.8em;
+            }
+            .markdown-content th, .markdown-content td {
+                padding: 4px;
+            }
+        }
     </style>
 </head>
-
 <body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-sans text-gray-900">
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <header class="mb-12 text-center animate-fade-in">
-            <h1
-                class="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 mb-4">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-7xl">
+        <header class="mb-8 sm:mb-12 text-center animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 mb-2 sm:mb-4">
                 Phân tích Hình ảnh Chuyên sâu AI
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600">Khám phá chi tiết ẩn sau mỗi bức ảnh</p>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600">Khám phá chi tiết ẩn sau mỗi bức ảnh</p>
         </header>
 
-        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             <section class="space-y-6 animate-fade-in">
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-primary">
-                    <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
-                        <i data-lucide="upload-cloud" class="w-8 h-8 mr-3 text-primary"></i>
+                <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
+                        <i data-lucide="upload-cloud" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-primary"></i>
                         Tải lên và Phân tích
                     </h2>
-                    <div class="space-y-6">
+                    <div class="space-y-4 sm:space-y-6">
                         <div>
-                            <label for="imageUpload" class="block text-lg font-medium mb-2 text-gray-700">Tải lên hình
-                                ảnh:</label>
+                            <label for="imageUpload" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Tải lên hình ảnh:</label>
                             <div class="flex items-center justify-center w-full">
-                                <label for="imageUpload"
-                                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-primary border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+                                <label for="imageUpload" class="flex flex-col items-center justify-center w-full h-48 sm:h-64 border-2 border-primary border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <i data-lucide="upload-cloud" class="w-12 h-12 mb-4 text-primary"></i>
-                                        <p class="mb-2 text-xl text-gray-500"><span class="font-semibold">Nhấp để tải
-                                                lên</span> hoặc kéo và thả</p>
-                                        <p class="text-sm text-gray-500">PNG, JPG hoặc GIF (Tối đa 10MB)</p>
+                                        <i data-lucide="upload-cloud" class="w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-4 text-primary"></i>
+                                        <p class="mb-2 text-sm sm:text-base text-gray-500"><span class="font-semibold">Nhấp để tải lên</span> hoặc kéo và thả</p>
+                                        <p class="text-xs sm:text-sm text-gray-500">PNG, JPG hoặc GIF (Tối đa 10MB)</p>
                                     </div>
                                     <input id="imageUpload" type="file" class="hidden" accept="image/*" />
                                 </label>
                             </div>
                         </div>
                         <div id="imagePreview" class="hidden">
-                            <img id="previewImage" src="" alt="Xem trước"
-                                class="max-w-full h-auto rounded-lg shadow-md">
+                            <img id="previewImage" src="" alt="Xem trước" class="max-w-full h-auto rounded-lg shadow-md">
                         </div>
                         <div>
-                            <label for="imageUrl" class="block text-lg font-medium mb-2 text-gray-700">Hoặc nhập URL
-                                hình ảnh:</label>
-                            <div class="flex">
-                                <input type="url" id="imageUrl"
-                                    class="flex-grow px-4 py-3 bg-white border-2 border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200"
-                                    placeholder="https://example.com/image.jpg">
-                                <button id="fetchImageUrl"
-                                    class="px-6 py-3 bg-primary text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
-                                    <i data-lucide="download" class="w-6 h-6"></i>
+                            <label for="imageUrl" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Hoặc nhập URL hình ảnh:</label>
+                            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                                <div class="relative flex-grow w-full">
+                                    <input type="url" id="imageUrl" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 pr-10" placeholder="https://example.com/image.jpg">
+                                    <button id="fetchImageUrl" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary-dark focus:outline-none">
+                                        <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                                    </button>
+                                </div>
+                                <button id="analyzeUrlButton" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-primary text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200 flex items-center justify-center">
+                                    <i data-lucide="image" class="w-4 h-4 sm:w-5 sm:h-5 mr-2"></i>
+                                    Phân tích URL
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <label for="modelSelect" class="block text-lg font-medium mb-2 text-gray-700">Chọn mô
-                                hình:</label>
-                            <select id="modelSelect"
-                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200">
+                            <label for="modelSelect" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Chọn mô hình:</label>
+                            <select id="modelSelect" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200">
                                 <option value="gemini-1.5-pro-002">Gemini 1.5 Pro 002</option>
                                 <option value="gemini-1.5-flash-002">Gemini 1.5 Flash 002</option>
                                 <option value="gemini-1.5-flash-8b">Gemini 1.5 Flash 8B</option>
@@ -177,15 +182,11 @@
                             </select>
                         </div>
                         <div>
-                            <label for="promptInput" class="block text-lg font-medium mb-2 text-gray-700">Nhập prompt mô
-                                tả hình ảnh:</label>
-                            <textarea id="promptInput" rows="4"
-                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200"
-                                placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
+                            <label for="promptInput" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Nhập prompt mô tả hình ảnh:</label>
+                            <textarea id="promptInput" rows="4" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200" placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
                         </div>
-                        <button id="analyzeButtonSimple"
-                            class="w-full flex items-center justify-center px-6 py-3 bg-primary text-white text-lg font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
-                            <i data-lucide="search" class="w-6 h-6 mr-2"></i>
+                        <button id="analyzeButtonSimple" class="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-primary text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
+                            <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6 mr-2"></i>
                             Phân tích Hình ảnh
                         </button>
                     </div>
@@ -193,18 +194,15 @@
             </section>
 
             <section class="space-y-6 animate-fade-in" style="animation-delay: 0.2s;">
-                <div
-                    class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-secondary">
-                    <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
-                        <i data-lucide="settings" class="w-8 h-8 mr-3 text-secondary"></i>
+                <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-secondary">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
+                        <i data-lucide="settings" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-secondary"></i>
                         Tùy chọn Nâng cao
                     </h2>
-                    <div class="space-y-6">
+                    <div class="space-y-4 sm:space-y-6">
                         <div>
-                            <label for="analysisType" class="block text-lg font-medium mb-2 text-gray-700">Loại phân
-                                tích:</label>
-                            <select id="analysisType"
-                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
+                            <label for="analysisType" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Loại phân tích:</label>
+                            <select id="analysisType" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="general">Phân tích tổng quát</option>
                                 <option value="objects">Nhận diện đối tượng</option>
                                 <option value="text">Nhận diện văn bản</option>
@@ -218,20 +216,16 @@
                             </select>
                         </div>
                         <div>
-                            <label for="detailLevel" class="block text-lg font-medium mb-2 text-gray-700">Mức độ chi
-                                tiết:</label>
-                            <input type="range" id="detailLevel" min="1" max="5" value="3"
-                                class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-secondary">
-                            <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <label for="detailLevel" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Mức độ chi tiết:</label>
+                            <input type="range" id="detailLevel" min="1" max="5" value="3" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-secondary">
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-500 mt-2">
                                 <span>Cơ bản</span>
                                 <span>Chi tiết</span>
                             </div>
                         </div>
                         <div>
-                            <label for="languageStyle" class="block text-lg font-medium mb-2 text-gray-700">Phong cách
-                                ngôn ngữ:</label>
-                            <select id="languageStyle"
-                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
+                            <label for="languageStyle" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Phong cách ngôn ngữ:</label>
+                            <select id="languageStyle" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="academic">Học thuật</option>
                                 <option value="conversational">Đàm thoại</option>
                                 <option value="technical">Kỹ thuật</option>
@@ -239,19 +233,16 @@
                             </select>
                         </div>
                         <div>
-                            <label for="outputFormat" class="block text-lg font-medium mb-2 text-gray-700">Định dạng kết
-                                quả:</label>
-                            <select id="outputFormat"
-                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
+                            <label for="outputFormat" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Định dạng kết quả:</label>
+                            <select id="outputFormat" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="paragraph">Đoạn văn</option>
                                 <option value="bullet">Danh sách gạch đầu dòng</option>
                                 <option value="table">Bảng</option>
                                 <option value="json">JSON</option>
                             </select>
                         </div>
-                        <button id="analyzeButtonAdvanced"
-                            class="w-full flex items-center justify-center px-6 py-3 bg-secondary text-white text-lg font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-colors duration-200">
-                            <i data-lucide="search" class="w-6 h-6 mr-2"></i>
+                        <button id="analyzeButtonAdvanced" class="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-secondary text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-colors duration-200">
+                            <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6 mr-2"></i>
                             Phân tích Nâng cao
                         </button>
                     </div>
@@ -259,55 +250,50 @@
             </section>
         </main>
 
-        <section id="resultSection" class="mt-12 space-y-6 animate-fade-in" style="animation-delay: 0.4s;">
-            <div
-                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-green-500">
-                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
-                    <i data-lucide="file-text" class="w-8 h-8 mr-3 text-green-500"></i>
+        <section id="resultSection" class="mt-8 sm:mt-12 space-y-6 animate-fade-in" style="animation-delay: 0.4s;">
+            <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-green-500">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
+                    <i data-lucide="file-text" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-green-500"></i>
                     Kết quả Phân tích
                 </h2>
-                <div id="loadingAnimation" class="hidden flex justify-center items-center space-x-2 my-8">
+                <div id="loadingAnimation" class="hidden flex justify-center items-center space-x-2 my-6 sm:my-8">
                     <div class="loading-wave"></div>
                     <div class="loading-wave"></div>
                     <div class="loading-wave"></div>
                     <div class="loading-wave"></div>
                     <div class="loading-wave"></div>
                 </div>
-                <div id="result" class="prose prose-lg max-w-none">
+                <div id="result" class="prose prose-sm sm:prose-base lg:prose-lg max-w-none markdown-content">
                     <p class="text-gray-500">Kết quả phân tích sẽ hiển thị ở đây...</p>
                 </div>
             </div>
-            <div id="visualizations"
-                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-yellow-500 hidden">
-                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
-                    <i data-lucide="bar-chart" class="w-8 h-8 mr-3 text-yellow-500"></i>
+            <div id="visualizations" class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-yellow-500 hidden">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
+                    <i data-lucide="bar-chart" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-yellow-500"></i>
                     Trực quan hóa
                 </h2>
-                <div id="visualizationContent" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div id="visualizationContent" class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <!-- Visualization content will be added here dynamically -->
                 </div>
             </div>
-            <div
-                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-purple-500">
-                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
-                    <i data-lucide="share" class="w-8 h-8 mr-3 text-purple-500"></i>
+            <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-purple-500">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
+                    <i data-lucide="share" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-purple-500"></i>
                     Chia sẻ
                 </h2>
                 <div class="space-y-4">
-                    <button id="shareResults"
-                        class="w-full flex items-center justify-center px-6 py-3 bg-purple-500 text-white text-lg font-semibold rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
-                        <i data-lucide="share-2" class="w-6 h-6 mr-2"></i>
+                    <button id="shareResults" class="w-full flex items-center justify-center px-6 py-3 bg-purple-500 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                        <i data-lucide="share-2" class="w-5 h-5 sm:w-6 sm:h-6 mr-2"></i>
                         Chia sẻ kết quả
                     </button>
                 </div>
             </div>
-            <div
-                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-indigo-500">
-                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
-                    <i data-lucide="history" class="w-8 h-8 mr-3 text-indigo-500"></i>
+            <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-indigo-500">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
+                    <i data-lucide="history" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-indigo-500"></i>
                     Phân tích gần đây
                 </h2>
-                <ul id="recentAnalyses" class="space-y-4 max-h-60 overflow-y-auto custom-scrollbar">
+                <ul id="recentAnalyses" class="space-y-3 sm:space-y-4 max-h-48 sm:max-h-60 overflow-y-auto custom-scrollbar">
                     <!-- Recent analyses will be added here dynamically -->
                 </ul>
             </div>
@@ -332,7 +318,7 @@
             }
         });
 
-        document.getElementById('fetchImageUrl').addEventListener('click', function () {
+        document.getElementById('fetchImageUrl').addEventListener('click', function() {
             const imageUrl = document.getElementById('imageUrl').value;
             if (imageUrl) {
                 document.getElementById('previewImage').src = imageUrl;
@@ -342,6 +328,7 @@
 
         document.getElementById('analyzeButtonSimple').addEventListener('click', analyzeImage);
         document.getElementById('analyzeButtonAdvanced').addEventListener('click', analyzeImage);
+        document.getElementById('analyzeUrlButton').addEventListener('click', analyzeImage);
 
         function scrollToResults() {
             const resultSection = document.getElementById('resultSection');
@@ -459,6 +446,8 @@
 
             basePrompt += "QUAN TRỌNG: Phản hồi của bạn PHẢI HOÀN TOÀN bằng tiếng Việt. KHÔNG sử dụng bất kỳ từ tiếng Anh nào trong phân tích của bạn. ";
 
+            basePrompt += "Hãy làm nổi bật các ý chính bằng cách sử dụng định dạng Markdown. Sử dụng **in đậm** cho các điểm quan trọng, *in nghiêng* cho các chi tiết phụ, và tạo danh sách có cấu trúc khi cần thiết. ";
+
             switch (analysisType) {
                 case 'objects':
                     basePrompt += "Tập trung vào việc nhận diện và mô tả chi tiết các đối tượng chính trong hình. Liệt kê các đối tượng và mô tả vị trí, kích thước, màu sắc của chúng. Phân tích mối quan hệ giữa các đối tượng nếu có.";
@@ -510,13 +499,13 @@
 
             switch (outputFormat) {
                 case 'paragraph':
-                    basePrompt += "Trình bày kết quả dưới dạng các đoạn văn có cấu trúc. ";
+                    basePrompt += "Trình bày kết quả dưới dạng các đoạn văn có cấu trúc, sử dụng Markdown để làm nổi bật các ý chính. ";
                     break;
                 case 'bullet':
-                    basePrompt += "Trình bày kết quả dưới dạng danh sách gạch đầu dòng. ";
+                    basePrompt += "Trình bày kết quả dưới dạng danh sách gạch đầu dòng, sử dụng Markdown để tạo danh sách có cấu trúc và làm nổi bật các ý chính. ";
                     break;
                 case 'table':
-                    basePrompt += "Trình bày kết quả dưới dạng bảng Markdown nếu có thể. ";
+                    basePrompt += "Trình bày kết quả dưới dạng bảng Markdown nếu có thể, sử dụng định dạng bảng Markdown để tổ chức thông tin một cách rõ ràng. ";
                     break;
                 case 'json':
                     basePrompt += "Trình bày kết quả dưới dạng chuỗi JSON hợp lệ. ";
@@ -542,6 +531,7 @@
                     console.error('Lỗi khi phân tích JSON:', e);
                 }
             } else {
+                // Sử dụng thư viện marked để chuyển đổi Markdown thành HTML
                 formattedAnalysis = marked.parse(analysisText);
             }
 
@@ -574,12 +564,12 @@
 
         function generateColorPalette(analysisResult) {
             const colors = extractColorsFromAnalysis(analysisResult);
-            let html = '<div class="color-palette flex flex-wrap justify-center gap-4 mb-6">';
+            let html = '<div class="color-palette flex flex-wrap justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">';
             colors.forEach(color => {
                 html += `
                     <div class="color-item text-center">
-                        <div class="w-16 h-16 rounded-full shadow-lg" style="background-color: ${color};" title="${color}"></div>
-                        <span class="text-sm mt-2 block">${color}</span>
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg" style="background-color: ${color};" title="${color}"></div>
+                        <span class="text-xs sm:text-sm mt-1 sm:mt-2 block">${color}</span>
                     </div>`;
             });
             html += '</div>';
@@ -588,7 +578,7 @@
 
         function generateObjectDistribution(analysisResult) {
             const objects = extractObjectsFromAnalysis(analysisResult);
-            let html = '<div class="object-distribution mb-6">';
+            let html = '<div class="object-distribution mb-4 sm:mb-6">';
             html += '<canvas id="objectChart"></canvas>';
             html += '</div>';
 
@@ -622,7 +612,7 @@
 
         function generateEmotionChart(analysisResult) {
             const emotions = extractEmotionsFromAnalysis(analysisResult);
-            let html = '<div class="emotion-chart mb-6">';
+            let html = '<div class="emotion-chart mb-4 sm:mb-6">';
             html += '<canvas id="emotionChart"></canvas>';
             html += '</div>';
 
@@ -657,15 +647,15 @@
 
         function generateFaceAnalysis(analysisResult) {
             const faceData = extractFaceDataFromAnalysis(analysisResult);
-            let html = '<div class="face-analysis mb-6">';
-            html += '<h3 class="text-xl font-semibold mb-4">Phân tích khuôn mặt</h3>';
-            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            let html = '<div class="face-analysis mb-4 sm:mb-6">';
+            html += '<h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">Phân tích khuôn mặt</h3>';
+            html += '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">';
             faceData.forEach(face => {
                 html += `
-                    <div class="bg-gray-100 p-4 rounded-lg shadow">
-                        <p class="font-medium">Khuôn mặt ${face.id}</p>
-                        <p>Biểu cảm: ${face.expression}</p>
-                        <p>Độ tuổi ước tính: ${face.age}</p>
+                    <div class="bg-gray-100 p-3 sm:p-4 rounded-lg shadow">
+                        <p class="font-medium text-sm sm:text-base">Khuôn mặt ${face.id}</p>
+                        <p class="text-xs sm:text-sm">Biểu cảm: ${face.expression}</p>
+                        <p class="text-xs sm:text-sm">Độ tuổi ước tính: ${face.age}</p>
                     </div>`;
             });
             html += '</div></div>';
@@ -674,14 +664,14 @@
 
         function generateCompositionAnalysis(analysisResult) {
             const compositionData = extractCompositionDataFromAnalysis(analysisResult);
-            let html = '<div class="composition-analysis mb-6">';
-            html += '<h3 class="text-xl font-semibold mb-4">Phân tích bố cục</h3>';
-            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            let html = '<div class="composition-analysis mb-4 sm:mb-6">';
+            html += '<h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">Phân tích bố cục</h3>';
+            html += '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">';
             Object.entries(compositionData).forEach(([key, value]) => {
                 html += `
-                    <div class="bg-gray-100 p-4 rounded-lg shadow">
-                        <p class="font-medium">${key}</p>
-                        <p>${value}</p>
+                    <div class="bg-gray-100 p-3 sm:p-4 rounded-lg shadow">
+                        <p class="font-medium text-sm sm:text-base">${key}</p>
+                        <p class="text-xs sm:text-sm">${value}</p>
                     </div>`;
             });
             html += '</div></div>';
@@ -723,12 +713,12 @@
         function addRecentAnalysis(analysisType) {
             const recentList = document.getElementById('recentAnalyses');
             const listItem = document.createElement('li');
-            listItem.className = 'flex items-center space-x-3 p-3 bg-gray-100 rounded-lg transition-colors duration-200 hover:bg-gray-200';
+            listItem.className = 'flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-gray-100 rounded-lg transition-colors duration-200 hover:bg-gray-200';
             listItem.innerHTML = `
-                <i data-lucide="${getAnalysisTypeIcon(analysisType)}" class="w-6 h-6 text-indigo-500"></i>
+                <i data-lucide="${getAnalysisTypeIcon(analysisType)}" class="w-5 h-5 sm:w-6 sm:h-6 text-indigo-500"></i>
                 <div>
-                    <span class="font-medium">${getAnalysisTypeName(analysisType)}</span>
-                    <span class="text-sm text-gray-500 block">${new Date().toLocaleTimeString()}</span>
+                    <span class="font-medium text-sm sm:text-base">${getAnalysisTypeName(analysisType)}</span>
+                    <span class="text-xs sm:text-sm text-gray-500 block">${new Date().toLocaleTimeString()}</span>
                 </div>
             `;
             recentList.insertBefore(listItem, recentList.firstChild);
@@ -770,14 +760,14 @@
             }
         }
 
-        document.getElementById('shareResults').addEventListener('click', function () {
+        document.getElementById('shareResults').addEventListener('click', function() {
             if (navigator.share) {
                 navigator.share({
                     title: 'Kết quả phân tích hình ảnh',
                     text: document.getElementById('result').innerText,
                     url: window.location.href
                 }).then(() => console.log('Chia sẻ thành công'))
-                    .catch((error) => console.log('Lỗi khi chia sẻ:', error));
+                .catch((error) => console.log('Lỗi khi chia sẻ:', error));
             } else {
                 alert('Trình duyệt của bạn không hỗ trợ tính năng chia sẻ.');
             }
@@ -788,5 +778,5 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
-
 </html>
+
