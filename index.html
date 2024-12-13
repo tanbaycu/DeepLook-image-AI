@@ -1,143 +1,147 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi" class="h-full bg-gray-50">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phân tích Hình ảnh Chuyên sâu AI - tanbaycu</title>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/T08NtMz.png">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/jdBhxKtM/Thi-t-k-ch-a-c-t-n-7.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
-                        border: "hsl(var(--border))",
-                        input: "hsl(var(--input))",
-                        ring: "hsl(var(--ring))",
-                        background: "hsl(var(--background))",
-                        foreground: "hsl(var(--foreground))",
                         primary: {
-                            DEFAULT: "hsl(var(--primary))",
-                            foreground: "hsl(var(--primary-foreground))",
+                            DEFAULT: '#3B82F6',
+                            foreground: '#FFFFFF',
                         },
                         secondary: {
-                            DEFAULT: "hsl(var(--secondary))",
-                            foreground: "hsl(var(--secondary-foreground))",
+                            DEFAULT: '#1E293B',
+                            foreground: '#FFFFFF',
                         },
-                        destructive: {
-                            DEFAULT: "hsl(var(--destructive))",
-                            foreground: "hsl(var(--destructive-foreground))",
-                        },
-                        muted: {
-                            DEFAULT: "hsl(var(--muted))",
-                            foreground: "hsl(var(--muted-foreground))",
-                        },
-                        accent: {
-                            DEFAULT: "hsl(var(--accent))",
-                            foreground: "hsl(var(--accent-foreground))",
-                        },
-                        popover: {
-                            DEFAULT: "hsl(var(--popover))",
-                            foreground: "hsl(var(--popover-foreground))",
-                        },
-                        card: {
-                            DEFAULT: "hsl(var(--card))",
-                            foreground: "hsl(var(--card-foreground))",
-                        },
-                    },
-                    borderRadius: {
-                        lg: "var(--radius)",
-                        md: "calc(var(--radius) - 2px)",
-                        sm: "calc(var(--radius) - 4px)",
                     },
                 },
             },
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer base {
-            :root {
-                --background: 0 0% 100%;
-                --foreground: 222.2 84% 4.9%;
-                --card: 0 0% 100%;
-                --card-foreground: 222.2 84% 4.9%;
-                --popover: 0 0% 100%;
-                --popover-foreground: 222.2 84% 4.9%;
-                --primary: 221.2 83.2% 53.3%;
-                --primary-foreground: 210 40% 98%;
-                --secondary: 210 40% 96.1%;
-                --secondary-foreground: 222.2 47.4% 11.2%;
-                --muted: 210 40% 96.1%;
-                --muted-foreground: 215.4 16.3% 46.9%;
-                --accent: 210 40% 96.1%;
-                --accent-foreground: 222.2 47.4% 11.2%;
-                --destructive: 0 84.2% 60.2%;
-                --destructive-foreground: 210 40% 98%;
-                --border: 214.3 31.8% 91.4%;
-                --input: 214.3 31.8% 91.4%;
-                --ring: 221.2 83.2% 53.3%;
-                --radius: 0.5rem;
+    <style>
+        :root {
+            --transition-speed: 0.3s;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn var(--transition-speed) ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            .dark {
-                --background: 222.2 84% 4.9%;
-                --foreground: 210 40% 98%;
-                --card: 222.2 84% 4.9%;
-                --card-foreground: 210 40% 98%;
-                --popover: 222.2 84% 4.9%;
-                --popover-foreground: 210 40% 98%;
-                --primary: 217.2 91.2% 59.8%;
-                --primary-foreground: 222.2 47.4% 11.2%;
-                --secondary: 217.2 32.6% 17.5%;
-                --secondary-foreground: 210 40% 98%;
-                --muted: 217.2 32.6% 17.5%;
-                --muted-foreground: 215 20.2% 65.1%;
-                --accent: 217.2 32.6% 17.5%;
-                --accent-foreground: 210 40% 98%;
-                --destructive: 0 62.8% 30.6%;
-                --destructive-foreground: 210 40% 98%;
-                --border: 217.2 32.6% 17.5%;
-                --input: 217.2 32.6% 17.5%;
-                --ring: 224.3 76.3% 48%;
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        @layer base {
-            * {
-                @apply border-border;
+
+        .loading-wave {
+            width: 5px;
+            height: 100px;
+            background: linear-gradient(45deg, #3B82F6, #60A5FA);
+            margin: 10px;
+            animation: wave 1s linear infinite;
+            border-radius: 20px;
+        }
+
+        .loading-wave:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .loading-wave:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-wave:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .loading-wave:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: scale(0);
             }
-            body {
-                @apply bg-background text-foreground;
+
+            50% {
+                transform: scale(1);
             }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #3B82F6;
+            border-radius: 20px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #2563EB;
         }
     </style>
 </head>
 
-<body class="min-h-screen bg-background font-sans antialiased">
-    <div class="container mx-auto px-4 py-8">
-        <header class="mb-8">
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-sans text-gray-900">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="mb-12 text-center animate-fade-in">
             <h1
-                class="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
-                Phân tích Hình ảnh Chuyên sâu AI</h1>
+                class="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 mb-4">
+                Phân tích Hình ảnh Chuyên sâu AI
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600">Khám phá chi tiết ẩn sau mỗi bức ảnh</p>
         </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <section class="space-y-6">
-                <div class="bg-card text-card-foreground rounded-lg shadow-lg p-6">
-                    <h2 class="text-2xl font-semibold mb-4">Tải lên và Cấu hình</h2>
-                    <div class="space-y-4">
+            <section class="space-y-6 animate-fade-in">
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-primary">
+                    <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
+                        <i data-lucide="upload-cloud" class="w-8 h-8 mr-3 text-primary"></i>
+                        Tải lên và Phân tích
+                    </h2>
+                    <div class="space-y-6">
                         <div>
-                            <label for="imageUpload" class="block text-sm font-medium mb-2">Tải lên hình ảnh:</label>
+                            <label for="imageUpload" class="block text-lg font-medium mb-2 text-gray-700">Tải lên hình
+                                ảnh:</label>
                             <div class="flex items-center justify-center w-full">
                                 <label for="imageUpload"
-                                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors duration-200">
+                                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-primary border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <i data-lucide="upload-cloud" class="w-8 h-8 mb-3 text-primary"></i>
-                                        <p class="mb-2 text-sm"><span class="font-semibold">Nhấp để tải lên</span> hoặc
-                                            kéo và thả</p>
-                                        <p class="text-xs text-muted-foreground">PNG, JPG hoặc GIF (Tối đa 10MB)</p>
+                                        <i data-lucide="upload-cloud" class="w-12 h-12 mb-4 text-primary"></i>
+                                        <p class="mb-2 text-xl text-gray-500"><span class="font-semibold">Nhấp để tải
+                                                lên</span> hoặc kéo và thả</p>
+                                        <p class="text-sm text-gray-500">PNG, JPG hoặc GIF (Tối đa 10MB)</p>
                                     </div>
                                     <input id="imageUpload" type="file" class="hidden" accept="image/*" />
                                 </label>
@@ -148,16 +152,59 @@
                                 class="max-w-full h-auto rounded-lg shadow-md">
                         </div>
                         <div>
-                            <label for="promptInput" class="block text-sm font-medium mb-2">Nhập prompt mô tả hình
-                                ảnh:</label>
-                            <textarea id="promptInput" rows="3"
-                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200"
-                                placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
+                            <label for="imageUrl" class="block text-lg font-medium mb-2 text-gray-700">Hoặc nhập URL
+                                hình ảnh:</label>
+                            <div class="flex">
+                                <input type="url" id="imageUrl"
+                                    class="flex-grow px-4 py-3 bg-white border-2 border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200"
+                                    placeholder="https://example.com/image.jpg">
+                                <button id="fetchImageUrl"
+                                    class="px-6 py-3 bg-primary text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
+                                    <i data-lucide="download" class="w-6 h-6"></i>
+                                </button>
+                            </div>
                         </div>
                         <div>
-                            <label for="analysisType" class="block text-sm font-medium mb-2">Loại phân tích:</label>
+                            <label for="modelSelect" class="block text-lg font-medium mb-2 text-gray-700">Chọn mô
+                                hình:</label>
+                            <select id="modelSelect"
+                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200">
+                                <option value="gemini-1.5-pro-002">Gemini 1.5 Pro 002</option>
+                                <option value="gemini-1.5-flash-002">Gemini 1.5 Flash 002</option>
+                                <option value="gemini-1.5-flash-8b">Gemini 1.5 Flash 8B</option>
+                                <option value="gemini-1.5-flash-8b-001">Gemini 1.5 Flash 8B 001</option>
+                                <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash Exp</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="promptInput" class="block text-lg font-medium mb-2 text-gray-700">Nhập prompt mô
+                                tả hình ảnh:</label>
+                            <textarea id="promptInput" rows="4"
+                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200"
+                                placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
+                        </div>
+                        <button id="analyzeButtonSimple"
+                            class="w-full flex items-center justify-center px-6 py-3 bg-primary text-white text-lg font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
+                            <i data-lucide="search" class="w-6 h-6 mr-2"></i>
+                            Phân tích Hình ảnh
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-6 animate-fade-in" style="animation-delay: 0.2s;">
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-secondary">
+                    <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
+                        <i data-lucide="settings" class="w-8 h-8 mr-3 text-secondary"></i>
+                        Tùy chọn Nâng cao
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="analysisType" class="block text-lg font-medium mb-2 text-gray-700">Loại phân
+                                tích:</label>
                             <select id="analysisType"
-                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
+                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="general">Phân tích tổng quát</option>
                                 <option value="objects">Nhận diện đối tượng</option>
                                 <option value="text">Nhận diện văn bản</option>
@@ -171,19 +218,20 @@
                             </select>
                         </div>
                         <div>
-                            <label for="detailLevel" class="block text-sm font-medium mb-2">Mức độ chi tiết:</label>
+                            <label for="detailLevel" class="block text-lg font-medium mb-2 text-gray-700">Mức độ chi
+                                tiết:</label>
                             <input type="range" id="detailLevel" min="1" max="5" value="3"
-                                class="w-full accent-primary">
-                            <div class="flex justify-between text-xs text-muted-foreground">
+                                class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-secondary">
+                            <div class="flex justify-between text-sm text-gray-500 mt-2">
                                 <span>Cơ bản</span>
                                 <span>Chi tiết</span>
                             </div>
                         </div>
                         <div>
-                            <label for="languageStyle" class="block text-sm font-medium mb-2">Phong cách ngôn
-                                ngữ:</label>
+                            <label for="languageStyle" class="block text-lg font-medium mb-2 text-gray-700">Phong cách
+                                ngôn ngữ:</label>
                             <select id="languageStyle"
-                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
+                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="academic">Học thuật</option>
                                 <option value="conversational">Đàm thoại</option>
                                 <option value="technical">Kỹ thuật</option>
@@ -191,46 +239,86 @@
                             </select>
                         </div>
                         <div>
-                            <label for="outputFormat" class="block text-sm font-medium mb-2">Định dạng kết quả:</label>
+                            <label for="outputFormat" class="block text-lg font-medium mb-2 text-gray-700">Định dạng kết
+                                quả:</label>
                             <select id="outputFormat"
-                                class="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200">
+                                class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="paragraph">Đoạn văn</option>
                                 <option value="bullet">Danh sách gạch đầu dòng</option>
                                 <option value="table">Bảng</option>
                                 <option value="json">JSON</option>
                             </select>
                         </div>
-                        <button id="analyzeButton"
-                            class="w-full flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
-                            <i data-lucide="search" class="w-5 h-5 mr-2"></i>
-                            Phân tích Hình ảnh
+                        <button id="analyzeButtonAdvanced"
+                            class="w-full flex items-center justify-center px-6 py-3 bg-secondary text-white text-lg font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-colors duration-200">
+                            <i data-lucide="search" class="w-6 h-6 mr-2"></i>
+                            Phân tích Nâng cao
                         </button>
                     </div>
                 </div>
             </section>
-
-            <section class="space-y-6">
-                <div class="bg-card text-card-foreground rounded-lg shadow-lg p-6">
-                    <h2 class="text-2xl font-semibold mb-4">Kết quả Phân tích</h2>
-                    <div id="result" class="prose prose-sm dark:prose-invert max-w-none">
-                        <p class="text-muted-foreground">Kết quả phân tích sẽ hiển thị ở đây...</p>
-                    </div>
-                </div>
-                <div id="visualizations" class="bg-card text-card-foreground rounded-lg shadow-lg p-6 hidden">
-                    <h2 class="text-2xl font-semibold mb-4">Trực quan hóa</h2>
-                    <div id="visualizationContent" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Nội dung trực quan hóa sẽ được thêm vào đây bằng JavaScript -->
-                    </div>
-                </div>
-            </section>
         </main>
+
+        <section id="resultSection" class="mt-12 space-y-6 animate-fade-in" style="animation-delay: 0.4s;">
+            <div
+                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-green-500">
+                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
+                    <i data-lucide="file-text" class="w-8 h-8 mr-3 text-green-500"></i>
+                    Kết quả Phân tích
+                </h2>
+                <div id="loadingAnimation" class="hidden flex justify-center items-center space-x-2 my-8">
+                    <div class="loading-wave"></div>
+                    <div class="loading-wave"></div>
+                    <div class="loading-wave"></div>
+                    <div class="loading-wave"></div>
+                    <div class="loading-wave"></div>
+                </div>
+                <div id="result" class="prose prose-lg max-w-none">
+                    <p class="text-gray-500">Kết quả phân tích sẽ hiển thị ở đây...</p>
+                </div>
+            </div>
+            <div id="visualizations"
+                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-yellow-500 hidden">
+                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
+                    <i data-lucide="bar-chart" class="w-8 h-8 mr-3 text-yellow-500"></i>
+                    Trực quan hóa
+                </h2>
+                <div id="visualizationContent" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Visualization content will be added here dynamically -->
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-purple-500">
+                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
+                    <i data-lucide="share" class="w-8 h-8 mr-3 text-purple-500"></i>
+                    Chia sẻ
+                </h2>
+                <div class="space-y-4">
+                    <button id="shareResults"
+                        class="w-full flex items-center justify-center px-6 py-3 bg-purple-500 text-white text-lg font-semibold rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                        <i data-lucide="share-2" class="w-6 h-6 mr-2"></i>
+                        Chia sẻ kết quả
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-indigo-500">
+                <h2 class="text-3xl font-bold mb-6 text-secondary flex items-center">
+                    <i data-lucide="history" class="w-8 h-8 mr-3 text-indigo-500"></i>
+                    Phân tích gần đây
+                </h2>
+                <ul id="recentAnalyses" class="space-y-4 max-h-60 overflow-y-auto custom-scrollbar">
+                    <!-- Recent analyses will be added here dynamically -->
+                </ul>
+            </div>
+        </section>
     </div>
 
     <script>
         lucide.createIcons();
 
-        const API_KEY = 'AIzaSyBQZMlCQTsaRcGMtBufDmJey6L6R6cV2SA';
-        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent';
+        const API_KEY = 'AIzaSyD8Zc-j7kc_FkSF_WXQdxQpc4bGBD5KElU';
+        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/';
 
         document.getElementById('imageUpload').addEventListener('change', function (event) {
             const file = event.target.files[0];
@@ -244,9 +332,36 @@
             }
         });
 
-        document.getElementById('analyzeButton').addEventListener('click', async function () {
+        document.getElementById('fetchImageUrl').addEventListener('click', function () {
+            const imageUrl = document.getElementById('imageUrl').value;
+            if (imageUrl) {
+                document.getElementById('previewImage').src = imageUrl;
+                document.getElementById('imagePreview').classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('analyzeButtonSimple').addEventListener('click', analyzeImage);
+        document.getElementById('analyzeButtonAdvanced').addEventListener('click', analyzeImage);
+
+        function scrollToResults() {
+            const resultSection = document.getElementById('resultSection');
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showLoading() {
+            document.getElementById('loadingAnimation').classList.remove('hidden');
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingAnimation').classList.add('hidden');
+        }
+
+        async function analyzeImage() {
             const imageInput = document.getElementById('imageUpload');
+            const imageUrl = document.getElementById('imageUrl').value;
             const promptInput = document.getElementById('promptInput');
+            const modelSelect = document.getElementById('modelSelect');
             const analysisType = document.getElementById('analysisType').value;
             const detailLevel = document.getElementById('detailLevel').value;
             const languageStyle = document.getElementById('languageStyle').value;
@@ -255,18 +370,24 @@
             const visualizationsElement = document.getElementById('visualizations');
             const visualizationContentElement = document.getElementById('visualizationContent');
 
-            if (!imageInput.files[0]) {
-                alert('Vui lòng tải lên hình ảnh trước khi phân tích.');
+            if (!imageInput.files[0] && !imageUrl) {
+                alert('Vui lòng tải lên hình ảnh hoặc cung cấp URL hình ảnh trước khi phân tích.');
                 return;
             }
 
-            resultElement.innerHTML = "<p class='text-primary'>Đang xử lý, vui lòng đợi...</p>";
-            visualizationsElement.classList.add('hidden');
+            scrollToResults();
+            showLoading();
 
             try {
-                const imageBase64 = await getBase64(imageInput.files[0]);
+                let imageBase64;
+                if (imageInput.files[0]) {
+                    imageBase64 = await getBase64(imageInput.files[0]);
+                } else {
+                    imageBase64 = await getBase64FromUrl(imageUrl);
+                }
                 const prompt = generatePrompt(promptInput.value, analysisType, detailLevel, languageStyle, outputFormat);
-                const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                const selectedModel = modelSelect.value;
+                const response = await fetch(`${API_URL}${selectedModel}:generateContent?key=${API_KEY}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -277,7 +398,7 @@
                                 { text: prompt },
                                 {
                                     inline_data: {
-                                        mime_type: imageInput.files[0].type,
+                                        mime_type: imageInput.files[0] ? imageInput.files[0].type : 'image/jpeg',
                                         data: imageBase64
                                     }
                                 }
@@ -292,6 +413,7 @@
 
                 const data = await response.json();
                 const analysisResult = data.candidates[0].content.parts[0].text;
+                hideLoading();
                 displayAnalysisResult(analysisResult, resultElement, outputFormat);
 
                 // Xử lý trực quan hóa
@@ -302,11 +424,15 @@
                 } else {
                     visualizationsElement.classList.add('hidden');
                 }
+
+                // Thêm phân tích gần đây
+                addRecentAnalysis(analysisType);
             } catch (error) {
                 console.error('Lỗi:', error);
-                resultElement.innerHTML = `<p class="text-destructive">Lỗi: ${error.message}</p>`;
+                hideLoading();
+                resultElement.innerHTML = `<p class="text-red-500">Lỗi: ${error.message}</p>`;
             }
-        });
+        }
 
         function getBase64(file) {
             return new Promise((resolve, reject) => {
@@ -314,6 +440,17 @@
                 reader.readAsDataURL(file);
                 reader.onload = () => resolve(reader.result.split(',')[1]);
                 reader.onerror = error => reject(error);
+            });
+        }
+
+        async function getBase64FromUrl(url) {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
             });
         }
 
@@ -424,31 +561,37 @@
                 case 'emotion':
                     visualizations += generateEmotionChart(analysisResult);
                     break;
-                // Thêm các loại trực quan hóa khác tùy theo loại phân tích
+                case 'faces':
+                    visualizations += generateFaceAnalysis(analysisResult);
+                    break;
+                case 'composition':
+                    visualizations += generateCompositionAnalysis(analysisResult);
+                    break;
             }
 
             return visualizations;
         }
 
         function generateColorPalette(analysisResult) {
-            // Giả định: Chúng ta trích xuất các màu từ kết quả phân tích
             const colors = extractColorsFromAnalysis(analysisResult);
-            let html = '<div class="color-palette flex space-x-2">';
+            let html = '<div class="color-palette flex flex-wrap justify-center gap-4 mb-6">';
             colors.forEach(color => {
-                html += `<div class="w-12 h-12 rounded" style="background-color: ${color};"></div>`;
+                html += `
+                    <div class="color-item text-center">
+                        <div class="w-16 h-16 rounded-full shadow-lg" style="background-color: ${color};" title="${color}"></div>
+                        <span class="text-sm mt-2 block">${color}</span>
+                    </div>`;
             });
             html += '</div>';
             return html;
         }
 
         function generateObjectDistribution(analysisResult) {
-            // Giả định: Chúng ta trích xuất các đối tượng và số lượng từ kết quả phân tích
             const objects = extractObjectsFromAnalysis(analysisResult);
-            let html = '<div class="object-distribution">';
+            let html = '<div class="object-distribution mb-6">';
             html += '<canvas id="objectChart"></canvas>';
             html += '</div>';
 
-            // Sử dụng Chart.js để tạo biểu đồ
             setTimeout(() => {
                 const ctx = document.getElementById('objectChart').getContext('2d');
                 new Chart(ctx, {
@@ -464,6 +607,7 @@
                         }]
                     },
                     options: {
+                        responsive: true,
                         scales: {
                             y: {
                                 beginAtZero: true
@@ -477,13 +621,11 @@
         }
 
         function generateEmotionChart(analysisResult) {
-            // Giả định: Chúng ta trích xuất các cảm xúc và cường độ từ kết quả phân tích
             const emotions = extractEmotionsFromAnalysis(analysisResult);
-            let html = '<div class="emotion-chart">';
+            let html = '<div class="emotion-chart mb-6">';
             html += '<canvas id="emotionChart"></canvas>';
             html += '</div>';
 
-            // Sử dụng Chart.js để tạo biểu đồ
             setTimeout(() => {
                 const ctx = document.getElementById('emotionChart').getContext('2d');
                 new Chart(ctx, {
@@ -499,6 +641,7 @@
                         }]
                     },
                     options: {
+                        responsive: true,
                         scale: {
                             ticks: {
                                 beginAtZero: true,
@@ -512,26 +655,134 @@
             return html;
         }
 
-        // Hàm trích xuất dữ liệu từ kết quả phân tích (cần được triển khai)
+        function generateFaceAnalysis(analysisResult) {
+            const faceData = extractFaceDataFromAnalysis(analysisResult);
+            let html = '<div class="face-analysis mb-6">';
+            html += '<h3 class="text-xl font-semibold mb-4">Phân tích khuôn mặt</h3>';
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            faceData.forEach(face => {
+                html += `
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <p class="font-medium">Khuôn mặt ${face.id}</p>
+                        <p>Biểu cảm: ${face.expression}</p>
+                        <p>Độ tuổi ước tính: ${face.age}</p>
+                    </div>`;
+            });
+            html += '</div></div>';
+            return html;
+        }
+
+        function generateCompositionAnalysis(analysisResult) {
+            const compositionData = extractCompositionDataFromAnalysis(analysisResult);
+            let html = '<div class="composition-analysis mb-6">';
+            html += '<h3 class="text-xl font-semibold mb-4">Phân tích bố cục</h3>';
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            Object.entries(compositionData).forEach(([key, value]) => {
+                html += `
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <p class="font-medium">${key}</p>
+                        <p>${value}</p>
+                    </div>`;
+            });
+            html += '</div></div>';
+            return html;
+        }
+
         function extractColorsFromAnalysis(analysisResult) {
-            // Triển khai logic để trích xuất màu sắc từ kết quả phân tích
+            // Giả lập việc trích xuất màu sắc từ kết quả phân tích
             return ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3'];
         }
 
         function extractObjectsFromAnalysis(analysisResult) {
-            // Triển khai logic để trích xuất đối tượng và số lượng từ kết quả phân tích
+            // Giả lập việc trích xuất đối tượng và số lượng từ kết quả phân tích
             return { 'Người': 3, 'Cây': 2, 'Xe': 1, 'Tòa nhà': 4 };
         }
 
         function extractEmotionsFromAnalysis(analysisResult) {
-            // Triển khai logic để trích xuất cảm xúc và cường độ từ kết quả phân tích
+            // Giả lập việc trích xuất cảm xúc và cường độ từ kết quả phân tích
             return { 'Hạnh phúc': 4, 'Buồn': 1, 'Tức giận': 2, 'Ngạc nhiên': 3, 'Sợ hãi': 1 };
         }
+
+        function extractFaceDataFromAnalysis(analysisResult) {
+            // Giả lập việc trích xuất dữ liệu khuôn mặt từ kết quả phân tích
+            return [
+                { id: 1, expression: 'Hạnh phúc', age: '25-30' },
+                { id: 2, expression: 'Nghiêm túc', age: '40-45' }
+            ];
+        }
+
+        function extractCompositionDataFromAnalysis(analysisResult) {
+            // Giả lập việc trích xuất dữ liệu bố cục từ kết quả phân tích
+            return {
+                'Quy tắc phần ba': 'Áp dụng',
+                'Điểm nhấn': 'Trung tâm hình ảnh',
+                'Cân bằng': 'Đối xứng'
+            };
+        }
+
+        function addRecentAnalysis(analysisType) {
+            const recentList = document.getElementById('recentAnalyses');
+            const listItem = document.createElement('li');
+            listItem.className = 'flex items-center space-x-3 p-3 bg-gray-100 rounded-lg transition-colors duration-200 hover:bg-gray-200';
+            listItem.innerHTML = `
+                <i data-lucide="${getAnalysisTypeIcon(analysisType)}" class="w-6 h-6 text-indigo-500"></i>
+                <div>
+                    <span class="font-medium">${getAnalysisTypeName(analysisType)}</span>
+                    <span class="text-sm text-gray-500 block">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            recentList.insertBefore(listItem, recentList.firstChild);
+            if (recentList.children.length > 5) {
+                recentList.removeChild(recentList.lastChild);
+            }
+            lucide.createIcons();
+        }
+
+        function getAnalysisTypeIcon(analysisType) {
+            switch (analysisType) {
+                case 'general': return 'eye';
+                case 'objects': return 'box';
+                case 'text': return 'type';
+                case 'faces': return 'user';
+                case 'colors': return 'palette';
+                case 'composition': return 'layout';
+                case 'emotion': return 'smile';
+                case 'style': return 'brush';
+                case 'context': return 'map';
+                case 'symbolism': return 'star';
+                default: return 'image';
+            }
+        }
+
+        function getAnalysisTypeName(analysisType) {
+            switch (analysisType) {
+                case 'general': return 'Phân tích tổng quát';
+                case 'objects': return 'Nhận diện đối tượng';
+                case 'text': return 'Nhận diện văn bản';
+                case 'faces': return 'Nhận diện khuôn mặt';
+                case 'colors': return 'Phân tích màu sắc';
+                case 'composition': return 'Phân tích bố cục';
+                case 'emotion': return 'Phân tích cảm xúc';
+                case 'style': return 'Phân tích phong cách nghệ thuật';
+                case 'context': return 'Phân tích ngữ cảnh';
+                case 'symbolism': return 'Phân tích biểu tượng';
+                default: return 'Phân tích không xác định';
+            }
+        }
+
+        document.getElementById('shareResults').addEventListener('click', function () {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Kết quả phân tích hình ảnh',
+                    text: document.getElementById('result').innerText,
+                    url: window.location.href
+                }).then(() => console.log('Chia sẻ thành công'))
+                    .catch((error) => console.log('Lỗi khi chia sẻ:', error));
+            } else {
+                alert('Trình duyệt của bạn không hỗ trợ tính năng chia sẻ.');
+            }
+        });
     </script>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
