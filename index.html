@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="vi" class="h-full bg-gray-50">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepLook - Phân tích Hình ảnh Chuyên sâu AI | Công cụ AI Tốt nhất</title>
-    <meta name="description" content="DeepLook - Công cụ phân tích hình ảnh AI tiên tiến với khả năng nhận diện đối tượng, phân tích cảm xúc và nhiều tính năng chuyên sâu khác. Tối ưu cho trải nghiệm người dùng.">
-    <meta name="keywords" content="phân tích hình ảnh, AI, trí tuệ nhân tạo, nhận diện đối tượng, phân tích cảm xúc, DeepLook">
+    <meta name="description"
+        content="DeepLook - Công cụ phân tích hình ảnh AI tiên tiến với khả năng nhận diện đối tượng, phân tích cảm xúc và nhiều tính năng chuyên sâu khác. Tối ưu cho trải nghiệm người dùng.">
+    <meta name="keywords"
+        content="phân tích hình ảnh, AI, trí tuệ nhân tạo, nhận diện đối tượng, phân tích cảm xúc, DeepLook">
     <meta name="author" content="DeepLook">
     <link rel="canonical" href="https://deeplook-image-ai.vercel.app">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deeplook-image-ai.vercel.app">
     <meta property="og:title" content="DeepLook - Phân tích Hình ảnh Chuyên sâu AI">
-    <meta property="og:description" content="Công cụ phân tích hình ảnh AI tiên tiến với khả năng nhận diện đối tượng, phân tích cảm xúc và nhiều tính năng chuyên sâu khác.">
+    <meta property="og:description"
+        content="Công cụ phân tích hình ảnh AI tiên tiến với khả năng nhận diện đối tượng, phân tích cảm xúc và nhiều tính năng chuyên sâu khác.">
     <meta property="og:image" content="https://i.postimg.cc/jdBhxKtM/Thi-t-k-ch-a-c-t-n-7.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://deeplook-image-ai.vercel.app">
     <meta property="twitter:title" content="DeepLook - Phân tích Hình ảnh Chuyên sâu AI">
-    <meta property="twitter:description" content="Công cụ phân tích hình ảnh AI tiên tiến với khả năng nhận diện đối tượng, phân tích cảm xúc và nhiều tính năng chuyên sâu khác.">
+    <meta property="twitter:description"
+        content="Công cụ phân tích hình ảnh AI tiên tiến với khả năng nhận diện đối tượng, phân tích cảm xúc và nhiều tính năng chuyên sâu khác.">
     <meta property="twitter:image" content="https://i.postimg.cc/jdBhxKtM/Thi-t-k-ch-a-c-t-n-7.png">
 
     <!-- Favicon -->
@@ -58,13 +63,23 @@
         :root {
             --transition-speed: 0.3s;
         }
+
         .animate-fade-in {
             animation: fadeIn var(--transition-speed) ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .loading-wave {
             width: 5px;
             height: 60px;
@@ -73,102 +88,178 @@
             animation: wave 1s linear infinite;
             border-radius: 20px;
         }
+
         .loading-wave:nth-child(2) {
             animation-delay: 0.1s;
         }
+
         .loading-wave:nth-child(3) {
             animation-delay: 0.2s;
         }
+
         .loading-wave:nth-child(4) {
             animation-delay: 0.3s;
         }
+
         .loading-wave:nth-child(5) {
             animation-delay: 0.4s;
         }
+
         @keyframes wave {
-            0% { transform: scale(0); }
-            50% { transform: scale(1); }
-            100% { transform: scale(0); }
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
         }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background-color: #3B82F6;
             border-radius: 20px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background-color: #2563EB;
         }
-        .markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3,
+        .markdown-content h4,
+        .markdown-content h5,
+        .markdown-content h6 {
             margin-top: 1em;
             margin-bottom: 0.5em;
             font-weight: bold;
         }
-        .markdown-content h1 { font-size: 1.5em; }
-        .markdown-content h2 { font-size: 1.3em; }
-        .markdown-content h3 { font-size: 1.1em; }
-        .markdown-content ul, .markdown-content ol {
+
+        .markdown-content h1 {
+            font-size: 1.5em;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.3em;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.1em;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
             padding-left: 1.5em;
             margin-bottom: 1em;
         }
+
         .markdown-content li {
             margin-bottom: 0.5em;
         }
+
         .markdown-content p {
             margin-bottom: 1em;
         }
+
         .markdown-content table {
             border-collapse: collapse;
             margin-bottom: 1em;
             width: 100%;
         }
-        .markdown-content th, .markdown-content td {
+
+        .markdown-content th,
+        .markdown-content td {
             border: 1px solid #ddd;
             padding: 8px;
             font-size: 0.9em;
         }
+
         .markdown-content th {
             background-color: #f2f2f2;
             font-weight: bold;
         }
+
         @media (max-width: 640px) {
             .markdown-content table {
                 font-size: 0.8em;
             }
-            .markdown-content th, .markdown-content td {
+
+            .markdown-content th,
+            .markdown-content td {
                 padding: 4px;
             }
         }
+
+        .language-selector {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+        }
+
+        .language-selector select {
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid #e2e8f0;
+            background-color: white;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            color: #4a5568;
+        }
     </style>
 </head>
+
 <body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-sans text-gray-900">
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-7xl">
         <header class="mb-8 sm:mb-12 text-center animate-fade-in">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 mb-2 sm:mb-4">
+            <h1 id="mainTitle"
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 mb-2 sm:mb-4">
                 Phân tích Hình ảnh Chuyên sâu AI
             </h1>
-            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600">Khám phá chi tiết ẩn sau mỗi bức ảnh</p>
+            <p id="mainSubtitle" class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600">Khám phá chi tiết ẩn
+                sau mỗi bức ảnh</p>
         </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             <section class="space-y-6 animate-fade-in">
-                <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-primary">
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-primary">
                     <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
                         <i data-lucide="upload-cloud" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-primary"></i>
                         Tải lên và Phân tích
                     </h2>
                     <div class="space-y-4 sm:space-y-6">
                         <div>
-                            <label for="imageUpload" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Tải lên hình ảnh:</label>
+                            <label for="imageUpload"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Tải lên hình
+                                ảnh:</label>
                             <div class="flex items-center justify-center w-full">
-                                <label for="imageUpload" class="flex flex-col items-center justify-center w-full h-48 sm:h-64 border-2 border-primary border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+                                <label for="imageUpload"
+                                    class="flex flex-col items-center justify-center w-full h-48 sm:h-64 border-2 border-primary border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <i data-lucide="upload-cloud" class="w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-4 text-primary"></i>
-                                        <p class="mb-2 text-sm sm:text-base text-gray-500"><span class="font-semibold">Nhấp để tải lên</span> hoặc kéo và thả</p>
+                                        <i data-lucide="upload-cloud"
+                                            class="w-10 h-10 sm:w-12 sm:h-12 mb-3 sm:mb-4 text-primary"></i>
+                                        <p class="mb-2 text-sm sm:text-base text-gray-500"><span
+                                                class="font-semibold">Nhấp để tải lên</span> hoặc kéo và thả</p>
                                         <p class="text-xs sm:text-sm text-gray-500">PNG, JPG hoặc GIF (Tối đa 10MB)</p>
                                     </div>
                                     <input id="imageUpload" type="file" class="hidden" accept="image/*" />
@@ -176,26 +267,34 @@
                             </div>
                         </div>
                         <div id="imagePreview" class="hidden">
-                            <img id="previewImage" src="" alt="Xem trước" class="max-w-full h-auto rounded-lg shadow-md">
+                            <img id="previewImage" src="" alt="Xem trước"
+                                class="max-w-full h-auto rounded-lg shadow-md">
                         </div>
                         <div>
-                            <label for="imageUrl" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Hoặc nhập URL hình ảnh:</label>
+                            <label for="imageUrl" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Hoặc
+                                nhập URL hình ảnh:</label>
                             <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
                                 <div class="relative flex-grow w-full">
-                                    <input type="url" id="imageUrl" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 pr-10" placeholder="https://example.com/image.jpg">
-                                    <button id="fetchImageUrl" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary-dark focus:outline-none">
+                                    <input type="url" id="imageUrl"
+                                        class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 pr-10"
+                                        placeholder="https://example.com/image.jpg">
+                                    <button id="fetchImageUrl"
+                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 text-primary hover:text-primary-dark focus:outline-none">
                                         <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                                     </button>
                                 </div>
-                                <button id="analyzeUrlButton" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-primary text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200 flex items-center justify-center">
+                                <button id="analyzeUrlButton"
+                                    class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-primary text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200 flex items-center justify-center">
                                     <i data-lucide="image" class="w-4 h-4 sm:w-5 sm:h-5 mr-2"></i>
                                     Phân tích URL
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <label for="modelSelect" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Chọn mô hình:</label>
-                            <select id="modelSelect" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200">
+                            <label for="modelSelect"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Chọn mô hình:</label>
+                            <select id="modelSelect"
+                                class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200">
                                 <option value="gemini-1.5-pro-002">Gemini 1.5 Pro 002</option>
                                 <option value="gemini-1.5-flash-002">Gemini 1.5 Flash 002</option>
                                 <option value="gemini-1.5-flash-8b">Gemini 1.5 Flash 8B</option>
@@ -204,10 +303,15 @@
                             </select>
                         </div>
                         <div>
-                            <label for="promptInput" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Nhập prompt mô tả hình ảnh:</label>
-                            <textarea id="promptInput" rows="4" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200" placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
+                            <label for="promptInput"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Nhập prompt mô tả hình
+                                ảnh:</label>
+                            <textarea id="promptInput" rows="4"
+                                class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200"
+                                placeholder="Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể..."></textarea>
                         </div>
-                        <button id="analyzeButtonSimple" class="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-primary text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
+                        <button id="analyzeButtonSimple"
+                            class="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-primary text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200">
                             <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6 mr-2"></i>
                             Phân tích Hình ảnh
                         </button>
@@ -216,15 +320,19 @@
             </section>
 
             <section class="space-y-6 animate-fade-in" style="animation-delay: 0.2s;">
-                <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-secondary">
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-secondary">
                     <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
                         <i data-lucide="settings" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-secondary"></i>
                         Tùy chọn Nâng cao
                     </h2>
                     <div class="space-y-4 sm:space-y-6">
                         <div>
-                            <label for="analysisType" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Loại phân tích:</label>
-                            <select id="analysisType" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
+                            <label for="analysisType"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Loại phân
+                                tích:</label>
+                            <select id="analysisType"
+                                class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="general">Phân tích tổng quát</option>
                                 <option value="objects">Nhận diện đối tượng</option>
                                 <option value="text">Nhận diện văn bản</option>
@@ -238,16 +346,22 @@
                             </select>
                         </div>
                         <div>
-                            <label for="detailLevel" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Mức độ chi tiết:</label>
-                            <input type="range" id="detailLevel" min="1" max="5" value="3" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-secondary">
+                            <label for="detailLevel"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Mức độ chi
+                                tiết:</label>
+                            <input type="range" id="detailLevel" min="1" max="5" value="3"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-secondary">
                             <div class="flex justify-between text-xs sm:text-sm text-gray-500 mt-2">
                                 <span>Cơ bản</span>
                                 <span>Chi tiết</span>
                             </div>
                         </div>
                         <div>
-                            <label for="languageStyle" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Phong cách ngôn ngữ:</label>
-                            <select id="languageStyle" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
+                            <label for="languageStyle"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Phong cách ngôn
+                                ngữ:</label>
+                            <select id="languageStyle"
+                                class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="academic">Học thuật</option>
                                 <option value="conversational">Đàm thoại</option>
                                 <option value="technical">Kỹ thuật</option>
@@ -255,15 +369,19 @@
                             </select>
                         </div>
                         <div>
-                            <label for="outputFormat" class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Định dạng kết quả:</label>
-                            <select id="outputFormat" class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
+                            <label for="outputFormat"
+                                class="block text-base sm:text-lg font-medium mb-2 text-gray-700">Định dạng kết
+                                quả:</label>
+                            <select id="outputFormat"
+                                class="w-full px-4 py-2 sm:py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-shadow duration-200">
                                 <option value="paragraph">Đoạn văn</option>
                                 <option value="bullet">Danh sách gạch đầu dòng</option>
                                 <option value="table">Bảng</option>
                                 <option value="json">JSON</option>
                             </select>
                         </div>
-                        <button id="analyzeButtonAdvanced" class="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-secondary text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-colors duration-200">
+                        <button id="analyzeButtonAdvanced"
+                            class="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-secondary text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-colors duration-200">
                             <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6 mr-2"></i>
                             Phân tích Nâng cao
                         </button>
@@ -273,7 +391,8 @@
         </main>
 
         <section id="resultSection" class="mt-8 sm:mt-12 space-y-6 animate-fade-in" style="animation-delay: 0.4s;">
-            <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-green-500">
+            <div
+                class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-green-500">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
                     <i data-lucide="file-text" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-green-500"></i>
                     Kết quả Phân tích
@@ -289,7 +408,8 @@
                     <p class="text-gray-500">Kết quả phân tích sẽ hiển thị ở đây...</p>
                 </div>
             </div>
-            <div id="visualizations" class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-yellow-500 hidden">
+            <div id="visualizations"
+                class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-yellow-500 hidden">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
                     <i data-lucide="bar-chart" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-yellow-500"></i>
                     Trực quan hóa
@@ -298,24 +418,28 @@
                     <!-- Visualization content will be added here dynamically -->
                 </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-purple-500">
+            <div
+                class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-purple-500">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
                     <i data-lucide="share" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-purple-500"></i>
                     Chia sẻ
                 </h2>
                 <div class="space-y-4">
-                    <button id="shareResults" class="w-full flex items-center justify-center px-6 py-3 bg-purple-500 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <button id="shareResults"
+                        class="w-full flex items-center justify-center px-6 py-3 bg-purple-500 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
                         <i data-lucide="share-2" class="w-5 h-5 sm:w-6 sm:h-6 mr-2"></i>
                         Chia sẻ kết quả
                     </button>
                 </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-indigo-500">
+            <div
+                class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-t-4 border-indigo-500">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-secondary flex items-center">
                     <i data-lucide="history" class="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-indigo-500"></i>
                     Phân tích gần đây
                 </h2>
-                <ul id="recentAnalyses" class="space-y-3 sm:space-y-4 max-h-48 sm:max-h-60 overflow-y-auto custom-scrollbar">
+                <ul id="recentAnalyses"
+                    class="space-y-3 sm:space-y-4 max-h-48 sm:max-h-60 overflow-y-auto custom-scrollbar">
                     <!-- Recent analyses will be added here dynamically -->
                 </ul>
             </div>
@@ -340,7 +464,7 @@
             }
         });
 
-        document.getElementById('fetchImageUrl').addEventListener('click', function() {
+        document.getElementById('fetchImageUrl').addEventListener('click', function () {
             const imageUrl = document.getElementById('imageUrl').value;
             if (imageUrl) {
                 document.getElementById('previewImage').src = imageUrl;
@@ -394,7 +518,8 @@
                 } else {
                     imageBase64 = await getBase64FromUrl(imageUrl);
                 }
-                const prompt = generatePrompt(promptInput.value, analysisType, detailLevel, languageStyle, outputFormat);
+                const lang = document.getElementById('languageSelect').value;
+                const prompt = generatePrompt(promptInput.value, analysisType, detailLevel, languageStyle, outputFormat, lang);
                 const selectedModel = modelSelect.value;
                 const response = await fetch(`${API_URL}${selectedModel}:generateContent?key=${API_KEY}`, {
                     method: 'POST',
@@ -463,79 +588,125 @@
             });
         }
 
-        function generatePrompt(userPrompt, analysisType, detailLevel, languageStyle, outputFormat) {
-            let basePrompt = "Bạn là một chuyên gia phân tích hình ảnh có kinh nghiệm. Hãy phân tích hình ảnh sau đây và cung cấp thông tin chi tiết. ";
+        function generatePrompt(userPrompt, analysisType, detailLevel, languageStyle, outputFormat, lang) {
+            let basePrompt = lang === 'en'
+                ? "You are an experienced image analysis expert. Please analyze the following image and provide detailed information. "
+                : "Bạn là một chuyên gia phân tích hình ảnh có kinh nghiệm. Hãy phân tích hình ảnh sau đây và cung cấp thông tin chi tiết. ";
 
-            basePrompt += "QUAN TRỌNG: Phản hồi của bạn PHẢI HOÀN TOÀN bằng tiếng Việt. KHÔNG sử dụng bất kỳ từ tiếng Anh nào trong phân tích của bạn. ";
+            basePrompt += lang === 'en'
+                ? "IMPORTANT: Your response MUST be ENTIRELY in English. DO NOT use any Vietnamese words in your analysis. "
+                : "QUAN TRỌNG: Phản hồi của bạn PHẢI HOÀN TOÀN bằng tiếng Việt. KHÔNG sử dụng bất kỳ từ tiếng Anh nào trong phân tích của bạn. ";
 
-            basePrompt += "Hãy làm nổi bật các ý chính bằng cách sử dụng định dạng Markdown. Sử dụng **in đậm** cho các điểm quan trọng, *in nghiêng* cho các chi tiết phụ, và tạo danh sách có cấu trúc khi cần thiết. ";
+            basePrompt += lang === 'en'
+                ? "Please highlight key points using Markdown formatting. Use **bold** for important points, *italics* for minor details, and create structured lists when necessary. "
+                : "Hãy làm nổi bật các ý chính bằng cách sử dụng định dạng Markdown. Sử dụng **in đậm** cho các điểm quan trọng, *in nghiêng* cho các chi tiết phụ, và tạo danh sách có cấu trúc khi cần thiết. ";
 
             switch (analysisType) {
                 case 'objects':
-                    basePrompt += "Tập trung vào việc nhận diện và mô tả chi tiết các đối tượng chính trong hình. Liệt kê các đối tượng và mô tả vị trí, kích thước, màu sắc của chúng. Phân tích mối quan hệ giữa các đối tượng nếu có.";
+                    basePrompt += lang === 'en'
+                        ? "Focus on identifying and describing the main objects in the image in detail. List the objects and describe their location, size, and color. Analyze the relationships between objects if any."
+                        : "Tập trung vào việc nhận diện và mô tả chi tiết các đối tượng chính trong hình. Liệt kê các đối tượng và mô tả vị trí, kích thước, màu sắc của chúng. Phân tích mối quan hệ giữa các đối tượng nếu có.";
                     break;
                 case 'text':
-                    basePrompt += "Nhận diện và trích xuất mọi văn bản xuất hiện trong hình ảnh. Nếu có, hãy phân tích nội dung văn bản đó, bao gồm ngôn ngữ, phong cách, và ý nghĩa trong ngữ cảnh của hình ảnh.";
+                    basePrompt += lang === 'en'
+                        ? "Identify and extract any text that appears in the image. If any, analyze the content of that text, including language, style, and meaning in the context of the image."
+                        : "Nhận diện và trích xuất mọi văn bản xuất hiện trong hình ảnh. Nếu có, hãy phân tích nội dung văn bản đó, bao gồm ngôn ngữ, phong cách, và ý nghĩa trong ngữ cảnh của hình ảnh.";
                     break;
                 case 'faces':
-                    basePrompt += "Tập trung vào việc nhận diện và mô tả các khuôn mặt trong hình. Phân tích biểu cảm, đặc điểm nổi bật, và ước tính độ tuổi nếu có thể. Nếu có nhiều khuôn mặt, hãy mô tả mối quan hệ có thể có giữa họ.";
+                    basePrompt += lang === 'en'
+                        ? "Focus on identifying and describing the faces in the image. Analyze expressions, prominent features, and estimate age if possible. If there are multiple faces, describe the possible relationships between them."
+                        : "Tập trung vào việc nhận diện và mô tả các khuôn mặt trong hình. Phân tích biểu cảm, đặc điểm nổi bật, và ước tính độ tuổi nếu có thể. Nếu có nhiều khuôn mặt, hãy mô tả mối quan hệ có thể có giữa họ.";
                     break;
                 case 'colors':
-                    basePrompt += "Phân tích bảng màu của hình ảnh. Xác định màu sắc chủ đạo và mô tả cách chúng tương tác với nhau. Giải thích ý nghĩa và cảm xúc mà bảng màu này có thể truyền tải.";
+                    basePrompt += lang === 'en'
+                        ? "Analyze the color palette of the image. Identify the dominant colors and describe how they interact with each other. Explain the meaning and emotions that this color palette may convey."
+                        : "Phân tích bảng màu của hình ảnh. Xác định màu sắc chủ đạo và mô tả cách chúng tương tác với nhau. Giải thích ý nghĩa và cảm xúc mà bảng màu này có thể truyền tải.";
                     break;
                 case 'composition':
-                    basePrompt += "Phân tích bố cục và cấu trúc của hình ảnh. Mô tả cách các yếu tố được sắp xếp và tác động của chúng đến tổng thể bức ảnh. Xác định các nguyên tắc thiết kế được sử dụng và hiệu quả của chúng.";
+                    basePrompt += lang === 'en'
+                        ? "Analyze the composition and structure of the image. Describe how the elements are arranged and their impact on the overall image. Identify the design principles used and their effectiveness."
+                        : "Phân tích bố cục và cấu trúc của hình ảnh. Mô tả cách các yếu tố được sắp xếp và tác động của chúng đến tổng thể bức ảnh. Xác định các nguyên tắc thiết kế được sử dụng và hiệu quả của chúng.";
                     break;
                 case 'emotion':
-                    basePrompt += "Phân tích cảm xúc và tâm trạng mà hình ảnh truyền tải. Xác định các yếu tố cụ thể trong hình ảnh góp phần tạo nên cảm xúc đó và giải thích tại sao.";
+                    basePrompt += lang === 'en'
+                        ? "Analyze the emotions and mood conveyed by the image. Identify the specific elements in the image that contribute to that emotion and explain why."
+                        : "Phân tích cảm xúc và tâm trạng mà hình ảnh truyền tải. Xác định các yếu tố cụ thể trong hình ảnh góp phần tạo nên cảm xúc đó và giải thích tại sao.";
                     break;
                 case 'style':
-                    basePrompt += "Phân tích phong cách nghệ thuật của hình ảnh. Xác định các kỹ thuật, phong cách, hoặc trường phái nghệ thuật có thể được áp dụng. So sánh với các tác phẩm nghệ thuật nổi tiếng nếu có thể.";
+                    basePrompt += lang === 'en'
+                        ? "Analyze the artistic style of the image. Identify the techniques, styles, or artistic schools that may have been applied. Compare to famous works of art if possible."
+                        : "Phân tích phong cách nghệ thuật của hình ảnh. Xác định các kỹ thuật, phong cách, hoặc trường phái nghệ thuật có thể được áp dụng. So sánh với các tác phẩm nghệ thuật nổi tiếng nếu có thể.";
                     break;
                 case 'context':
-                    basePrompt += "Phân tích ngữ cảnh của hình ảnh. Xác định thời gian, địa điểm, và bối cảnh văn hóa hoặc lịch sử có thể liên quan. Giải thích ý nghĩa của hình ảnh trong bối cảnh rộng hơn.";
+                    basePrompt += lang === 'en'
+                        ? "Analyze the context of the image. Identify the time, place, and cultural or historical context that may be relevant. Explain the meaning of the image in a broader context."
+                        : "Phân tích ngữ cảnh của hình ảnh. Xác định thời gian, địa điểm, và bối cảnh văn hóa hoặc lịch sử có thể liên quan. Giải thích ý nghĩa của hình ảnh trong bối cảnh rộng hơn.";
                     break;
                 case 'symbolism':
-                    basePrompt += "Phân tích các biểu tượng và ẩn dụ trong hình ảnh. Xác định các yếu tố có thể mang ý nghĩa biểu tượng và giải thích ý nghĩa sâu xa của chúng trong ngữ cảnh của hình ảnh.";
+                    basePrompt += lang === 'en'
+                        ? "Analyze the symbols and metaphors in the image. Identify elements that may have symbolic meaning and explain their deeper meaning in the context of the image."
+                        : "Phân tích các biểu tượng và ẩn dụ trong hình ảnh. Xác định các yếu tố có thể mang ý nghĩa biểu tượng và giải thích ý nghĩa sâu xa của chúng trong ngữ cảnh của hình ảnh.";
                     break;
                 default:
-                    basePrompt += "Cung cấp một phân tích tổng quát về nội dung, ý nghĩa và bối cảnh của hình ảnh. Bao gồm các yếu tố như đối tượng, màu sắc, bố cục, và ý nghĩa tổng thể.";
+                    basePrompt += lang === 'en'
+                        ? "Provide a general analysis of the content, meaning, and context of the image. Include elements such as objects, colors, composition, and overall meaning."
+                        : "Cung cấp một phân tích tổng quát về nội dung, ý nghĩa và bối cảnh của hình ảnh. Bao gồm các yếu tố như đối tượng, màu sắc, bố cục, và ý nghĩa tổng thể.";
             }
 
-            basePrompt += `Mức độ chi tiết yêu cầu: ${detailLevel}/5. Hãy điều chỉnh độ sâu và phạm vi của phân tích theo mức độ này. `;
+            basePrompt += lang === 'en'
+                ? `Required detail level: ${detailLevel}/5. Adjust the depth and scope of the analysis according to this level. `
+                : `Mức độ chi tiết yêu cầu: ${detailLevel}/5. Hãy điều chỉnh độ sâu và phạm vi của phân tích theo mức độ này. `;
 
             switch (languageStyle) {
                 case 'academic':
-                    basePrompt += "Sử dụng ngôn ngữ học thuật và chính thức trong phân tích của bạn. ";
+                    basePrompt += lang === 'en'
+                        ? "Use academic and formal language in your analysis. "
+                        : "Sử dụng ngôn ngữ học thuật và chính thức trong phân tích của bạn. ";
                     break;
                 case 'conversational':
-                    basePrompt += "Sử dụng ngôn ngữ đàm thoại và dễ hiểu trong phân tích của bạn. ";
+                    basePrompt += lang === 'en'
+                        ? "Use conversational and easy-to-understand language in your analysis. "
+                        : "Sử dụng ngôn ngữ đàm thoại và dễ hiểu trong phân tích của bạn. ";
                     break;
                 case 'technical':
-                    basePrompt += "Sử dụng ngôn ngữ kỹ thuật và chuyên ngành trong phân tích của bạn. ";
+                    basePrompt += lang === 'en'
+                        ? "Use technical and specialized language in your analysis. "
+                        : "Sử dụng ngôn ngữ kỹ thuật và chuyên ngành trong phân tích của bạn. ";
                     break;
                 case 'creative':
-                    basePrompt += "Sử dụng ngôn ngữ sáng tạo và hình tượng trong phân tích của bạn. ";
+                    basePrompt += lang === 'en'
+                        ? "Use creative and figurative language in your analysis. "
+                        : "Sử dụng ngôn ngữ sáng tạo và hình tượng trong phân tích của bạn. ";
                     break;
             }
 
             switch (outputFormat) {
                 case 'paragraph':
-                    basePrompt += "Trình bày kết quả dưới dạng các đoạn văn có cấu trúc, sử dụng Markdown để làm nổi bật các ý chính. ";
+                    basePrompt += lang === 'en'
+                        ? "Present the results as structured paragraphs, using Markdown to highlight key points. "
+                        : "Trình bày kết quả dưới dạng các đoạn văn có cấu trúc, sử dụng Markdown để làm nổi bật các ý chính. ";
                     break;
                 case 'bullet':
-                    basePrompt += "Trình bày kết quả dưới dạng danh sách gạch đầu dòng, sử dụng Markdown để tạo danh sách có cấu trúc và làm nổi bật các ý chính. ";
+                    basePrompt += lang === 'en'
+                        ? "Present the results as a bulleted list, using Markdown to create a structured list and highlight key points. "
+                        : "Trình bày kết quả dưới dạng danh sách gạch đầu dòng, sử dụng Markdown để tạo danh sách có cấu trúc và làm nổi bật các ý chính. ";
                     break;
                 case 'table':
-                    basePrompt += "Trình bày kết quả dưới dạng bảng Markdown nếu có thể, sử dụng định dạng bảng Markdown để tổ chức thông tin một cách rõ ràng. ";
+                    basePrompt += lang === 'en'
+                        ? "Present the results as a Markdown table if possible, using Markdown table formatting to clearly organize the information. "
+                        : "Trình bày kết quả dưới dạng bảng Markdown nếu có thể, sử dụng định dạng bảng Markdown để tổ chức thông tin một cách rõ ràng. ";
                     break;
                 case 'json':
-                    basePrompt += "Trình bày kết quả dưới dạng chuỗi JSON hợp lệ. ";
+                    basePrompt += lang === 'en'
+                        ? "Present the results as a valid JSON string. "
+                        : "Trình bày kết quả dưới dạng chuỗi JSON hợp lệ. ";
                     break;
             }
 
             if (userPrompt) {
-                basePrompt += `Ngoài ra, hãy trả lời câu hỏi sau của người dùng: ${userPrompt}. Đảm bảo câu trả lời của bạn liên quan trực tiếp đến hình ảnh và phân tích của bạn.`;
+                basePrompt += lang === 'en'
+                    ? `Also, please answer the following user question: ${userPrompt}. Ensure your answer is directly related to the image and your analysis.`
+                    : `Ngoài ra, hãy trả lời câu hỏi sau của người dùng: ${userPrompt}. Đảm bảo câu trả lời của bạn liên quan trực tiếp đến hình ảnh và phân tích của bạn.`;
             }
 
             return basePrompt;
@@ -782,23 +953,311 @@
             }
         }
 
-        document.getElementById('shareResults').addEventListener('click', function() {
+        document.getElementById('shareResults').addEventListener('click', function () {
             if (navigator.share) {
                 navigator.share({
                     title: 'Kết quả phân tích hình ảnh',
                     text: document.getElementById('result').innerText,
                     url: window.location.href
                 }).then(() => console.log('Chia sẻ thành công'))
-                .catch((error) => console.log('Lỗi khi chia sẻ:', error));
+                    .catch((error) => console.log('Lỗi khi chia sẻ:', error));
             } else {
                 alert('Trình duyệt của bạn không hỗ trợ tính năng chia sẻ.');
             }
         });
+
+        function changeLanguage() {
+            const lang = document.getElementById('languageSelect').value;
+            const translations = {
+                'vi': {
+                    'mainTitle': 'Phân tích Hình ảnh Chuyên sâu AI',
+                    'mainSubtitle': 'Khám phá chi tiết ẩn sau mỗi bức ảnh',
+                    'uploadLabel': 'Tải lên hình ảnh:',
+                    'urlLabel': 'Hoặc nhập URL hình ảnh:',
+                    'modelLabel': 'Chọn mô hình:',
+                    'promptLabel': 'Nhập prompt mô tả hình ảnh:',
+                    'analyzeButton': 'Phân tích Hình ảnh',
+                    'advancedOptions': 'Tùy chọn Nâng cao',
+                    'analysisTypeLabel': 'Loại phân tích:',
+                    'detailLevelLabel': 'Mức độ chi tiết:',
+                    'languageStyleLabel': 'Phong cách ngôn ngữ:',
+                    'outputFormatLabel': 'Định dạng kết quả:',
+                    'resultsTitle': 'Kết quả Phân tích',
+                    'visualizationTitle': 'Trực quan hóa',
+                    'shareTitle': 'Chia sẻ',
+                    'recentAnalysesTitle': 'Phân tích gần đây',
+                    'placeholderPrompt': 'Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể...',
+                    'generalAnalysis': 'Phân tích tổng quát',
+                    'objectDetection': 'Nhận diện đối tượng',
+                    'textDetection': 'Nhận diện văn bản',
+                    'faceDetection': 'Nhận diện khuôn mặt',
+                    'colorAnalysis': 'Phân tích màu sắc',
+                    'compositionAnalysis': 'Phân tích bố cục',
+                    'emotionAnalysis': 'Phân tích cảm xúc',
+                    'styleAnalysis': 'Phân tích phong cách nghệ thuật',
+                    'contextAnalysis': 'Phân tích ngữ cảnh',
+                    'symbolismAnalysis': 'Phân tích biểu tượng',
+                    'academicStyle': 'Học thuật',
+                    'conversationalStyle': 'Đàm thoại',
+                    'technicalStyle': 'Kỹ thuật',
+                    'creativeStyle': 'Sáng tạo',
+                    'paragraphFormat': 'Đoạn văn',
+                    'bulletFormat': 'Danh sách gạch đầu dòng',
+                    'tableFormat': 'Bảng',
+                    'jsonFormat': 'JSON',
+                    'shareButton': 'Chia sẻ kết quả',
+                    'noImageAlert': 'Vui lòng tải lên hình ảnh hoặc cung cấp URL hình ảnh trước khi phân tích.',
+                    'networkError': 'Lỗi kết nối mạng',
+                    'objectChartLabel': 'Số lượng đối tượng',
+                    'emotionChartLabel': 'Cường độ cảm xúc',
+                    'faceAnalysisTitle': 'Phân tích khuôn mặt',
+                    'compositionAnalysisTitle': 'Phân tích bố cục',
+                    'noShareSupport': 'Trình duyệt của bạn không hỗ trợ tính năng chia sẻ.'
+
+                },
+                'en': {
+                    'mainTitle': 'AI-Powered Deep Image Analysis',
+                    'mainSubtitle': 'Uncover hidden details in every image',
+                    'uploadLabel': 'Upload Image:',
+                    'urlLabel': 'Or enter image URL:',
+                    'modelLabel': 'Select Model:',
+                    'promptLabel': 'Enter image description prompt:',
+                    'analyzeButton': 'Analyze Image',
+                    'advancedOptions': 'Advanced Options',
+                    'analysisTypeLabel': 'Analysis Type:',
+                    'detailLevelLabel': 'Detail Level:',
+                    'languageStyleLabel': 'Language Style:',
+                    'outputFormatLabel': 'Output Format:',
+                    'resultsTitle': 'Analysis Results',
+                    'visualizationTitle': 'Visualizations',
+                    'shareTitle': 'Share',
+                    'recentAnalysesTitle': 'Recent Analyses',
+                    'placeholderPrompt': 'Describe the image in detail or ask specific questions...',
+                    'generalAnalysis': 'General Analysis',
+                    'objectDetection': 'Object Detection',
+                    'textDetection': 'Text Detection',
+                    'faceDetection': 'Face Detection',
+                    'colorAnalysis': 'Color Analysis',
+                    'compositionAnalysis': 'Composition Analysis',
+                    'emotionAnalysis': 'Emotion Analysis',
+                    'styleAnalysis': 'Style Analysis',
+                    'contextAnalysis': 'Context Analysis',
+                    'symbolismAnalysis': 'Symbolism Analysis',
+                    'academicStyle': 'Academic',
+                    'conversationalStyle': 'Conversational',
+                    'technicalStyle': 'Technical',
+                    'creativeStyle': 'Creative',
+                    'paragraphFormat': 'Paragraph',
+                    'bulletFormat': 'Bulleted List',
+                    'tableFormat': 'Table',
+                    'jsonFormat': 'JSON',
+                    'shareButton': 'Share Results',
+                    'noImageAlert': 'Please upload an image or provide an image URL before analyzing.',
+                    'networkError': 'Network error',
+                    'objectChartLabel': 'Number of objects',
+                    'emotionChartLabel': 'Emotion intensity',
+                    'faceAnalysisTitle': 'Face Analysis',
+                    'compositionAnalysisTitle': 'Composition Analysis',
+                    'noShareSupport': 'Your browser does not support the share feature.'
+                }
+            };
+
+            // Update main title and subtitle
+            document.getElementById('mainTitle').textContent = translations[lang].mainTitle;
+            document.getElementById('mainSubtitle').textContent = translations[lang].mainSubtitle;
+
+            // Update labels and button texts
+            updateLabelsAndButtons(lang, translations);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update prompt language
+            updatePromptLanguage(lang, translations);
+        }
+
+        function updateLabelsAndButtons(lang, translations) {
+            const elementsToUpdate = [
+                { id: 'imageUpload', labelId: 'uploadLabel' },
+                { id: 'imageUrl', labelId: 'urlLabel' },
+                { id: 'modelSelect', labelId: 'modelLabel' },
+                { id: 'promptInput', labelId: 'promptLabel' },
+                { id: 'analyzeButtonSimple', textId: 'analyzeButton' },
+                { id: 'analysisType', labelId: 'analysisTypeLabel' },
+                { id: 'detailLevel', labelId: 'detailLevelLabel' },
+                { id: 'languageStyle', labelId: 'languageStyleLabel' },
+                { id: 'outputFormat', labelId: 'outputFormatLabel' },
+                { id: 'resultSection h2', textId: 'resultsTitle' },
+                { id: 'visualizations h2', textId: 'visualizationTitle' },
+                { id: 'shareResults', textId: 'shareButton' },
+                { id: 'recentAnalyses', labelId: 'recentAnalysesTitle' },
+            ];
+
+            elementsToUpdate.forEach(element => {
+                const label = document.getElementById(element.labelId ? element.labelId : element.textId);
+                if (label) {
+                    label.textContent = translations[lang][element.labelId ? element.labelId : element.textId];
+                }
+                const button = document.getElementById(element.id);
+                if (button && element.textId) {
+                    button.textContent = translations[lang][element.textId];
+                }
+            });
+        }
+
+        function updatePromptLanguage(lang, translations) {
+            document.getElementById('promptInput').placeholder = translations[lang].placeholderPrompt;
+        }
+
+        // Option values for analysis type, language style, and output format
+        const analysisTypeOptions = {
+            'vi': ['Phân tích tổng quát', 'Nhận diện đối tượng', 'Nhận diện văn bản', 'Nhận diện khuôn mặt', 'Phân tích màu sắc', 'Phân tích bố cục', 'Phân tích cảm xúc', 'Phân tích phong cách nghệ thuật', 'Phân tích ngữ cảnh', 'Phân tích biểu tượng'],
+            'en': ['General Analysis', 'Object Detection', 'Text Detection', 'Face Detection', 'Color Analysis', 'Composition Analysis', 'Emotion Analysis', 'Style Analysis', 'Context Analysis', 'Symbolism Analysis']
+        };
+        const languageStyleOptions = {
+            'vi': ['Học thuật', 'Đàm thoại', 'Kỹ thuật', 'Sáng tạo'],
+            'en': ['Academic', 'Conversational', 'Technical', 'Creative']
+        };
+        const outputFormatOptions = {
+            'vi': ['Đoạn văn', 'Danh sách gạch đầu dòng', 'Bảng', 'JSON'],
+            'en': ['Paragraph', 'Bulleted List', 'Table', 'JSON']
+        };
+
+        function updateSelectOptions(selectId, options) {
+            const selectElement = document.getElementById(selectId);
+            selectElement.innerHTML = ''; // Clear existing options
+            options.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.text = option;
+                selectElement.appendChild(optionElement);
+            });
+        }
+
+        function changeLanguage() {
+            const lang = document.getElementById('languageSelect').value;
+            const translations = {
+                'vi': {
+                    'mainTitle': 'Phân tích Hình ảnh Chuyên sâu AI',
+                    'mainSubtitle': 'Khám phá chi tiết ẩn sau mỗi bức ảnh',
+                    'uploadLabel': 'Tải lên hình ảnh:',
+                    'urlLabel': 'Hoặc nhập URL hình ảnh:',
+                    'modelLabel': 'Chọn mô hình:',
+                    'promptLabel': 'Nhập prompt mô tả hình ảnh:',
+                    'analyzeButton': 'Phân tích Hình ảnh',
+                    'advancedOptions': 'Tùy chọn Nâng cao',
+                    'analysisTypeLabel': 'Loại phân tích:',
+                    'detailLevelLabel': 'Mức độ chi tiết:',
+                    'languageStyleLabel': 'Phong cách ngôn ngữ:',
+                    'outputFormatLabel': 'Định dạng kết quả:',
+                    'resultsTitle': 'Kết quả Phân tích',
+                    'visualizationTitle': 'Trực quan hóa',
+                    'shareTitle': 'Chia sẻ',
+                    'recentAnalysesTitle': 'Phân tích gần đây',
+                    'placeholderPrompt': 'Mô tả chi tiết về hình ảnh hoặc đặt câu hỏi cụ thể...',
+                    'generalAnalysis': 'Phân tích tổng quát',
+                    'objectDetection': 'Nhận diện đối tượng',
+                    'textDetection': 'Nhận diện văn bản',
+                    'faceDetection': 'Nhận diện khuôn mặt',
+                    'colorAnalysis': 'Phân tích màu sắc',
+                    'compositionAnalysis': 'Phân tích bố cục',
+                    'emotionAnalysis': 'Phân tích cảm xúc',
+                    'styleAnalysis': 'Phân tích phong cách nghệ thuật',
+                    'contextAnalysis': 'Phân tích ngữ cảnh',
+                    'symbolismAnalysis': 'Phân tích biểu tượng',
+                    'academicStyle': 'Học thuật',
+                    'conversationalStyle': 'Đàm thoại',
+                    'technicalStyle': 'Kỹ thuật',
+                    'creativeStyle': 'Sáng tạo',
+                    'paragraphFormat': 'Đoạn văn',
+                    'bulletFormat': 'Danh sách gạch đầu dòng',
+                    'tableFormat': 'Bảng',
+                    'jsonFormat': 'JSON',
+                    'shareButton': 'Chia sẻ kết quả',
+                    'noImageAlert': 'Vui lòng tải lên hình ảnh hoặc cung cấp URL hình ảnh trước khi phân tích.',
+                    'networkError': 'Lỗi kết nối mạng',
+                    'objectChartLabel': 'Số lượng đối tượng',
+                    'emotionChartLabel': 'Cường độ cảm xúc',
+                    'faceAnalysisTitle': 'Phân tích khuôn mặt',
+                    'compositionAnalysisTitle': 'Phân tích bố cục',
+                    'noShareSupport': 'Trình duyệt của bạn không hỗ trợ tính năng chia sẻ.'
+
+                },
+                'en': {
+                    'mainTitle': 'AI-Powered Deep Image Analysis',
+                    'mainSubtitle': 'Uncover hidden details in every image',
+                    'uploadLabel': 'Upload Image:',
+                    'urlLabel': 'Or enter image URL:',
+                    'modelLabel': 'Select Model:',
+                    'promptLabel': 'Enter image description prompt:',
+                    'analyzeButton': 'Analyze Image',
+                    'advancedOptions': 'Advanced Options',
+                    'analysisTypeLabel': 'Analysis Type:',
+                    'detailLevelLabel': 'Detail Level:',
+                    'languageStyleLabel': 'Language Style:',
+                    'outputFormatLabel': 'Output Format:',
+                    'resultsTitle': 'Analysis Results',
+                    'visualizationTitle': 'Visualizations',
+                    'shareTitle': 'Share',
+                    'recentAnalysesTitle': 'Recent Analyses',
+                    'placeholderPrompt': 'Describe the image in detail or ask specific questions...',
+                    'generalAnalysis': 'General Analysis',
+                    'objectDetection': 'Object Detection',
+                    'textDetection': 'Text Detection',
+                    'faceDetection': 'Face Detection',
+                    'colorAnalysis': 'Color Analysis',
+                    'compositionAnalysis': 'Composition Analysis',
+                    'emotionAnalysis': 'Emotion Analysis',
+                    'styleAnalysis': 'Style Analysis',
+                    'contextAnalysis': 'Context Analysis',
+                    'symbolismAnalysis': 'Symbolism Analysis',
+                    'academicStyle': 'Academic',
+                    'conversationalStyle': 'Conversational',
+                    'technicalStyle': 'Technical',
+                    'creativeStyle': 'Creative',
+                    'paragraphFormat': 'Paragraph',
+                    'bulletFormat': 'Bulleted List',
+                    'tableFormat': 'Table',
+                    'jsonFormat': 'JSON',
+                    'shareButton': 'Share Results',
+                    'noImageAlert': 'Please upload an image or provide an image URL before analyzing.',
+                    'networkError': 'Network error',
+                    'objectChartLabel': 'Number of objects',
+                    'emotionChartLabel': 'Emotion intensity',
+                    'faceAnalysisTitle': 'Face Analysis',
+                    'compositionAnalysisTitle': 'Composition Analysis',
+                    'noShareSupport': 'Your browser does not support the share feature.'
+                }
+            };
+
+            // Update main title and subtitle
+            document.getElementById('mainTitle').textContent = translations[lang].mainTitle;
+            document.getElementById('mainSubtitle').textContent = translations[lang].mainSubtitle;
+
+            // Update labels and button texts
+            updateLabelsAndButtons(lang, translations);
+
+            // Update select options
+            updateSelectOptions('analysisType', analysisTypeOptions[lang]);
+            updateSelectOptions('languageStyle', languageStyleOptions[lang]);
+            updateSelectOptions('outputFormat', outputFormatOptions[lang]);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update prompt language
+            updatePromptLanguage(lang, translations);
+        }
+
+
+        window.onload = function () {
+            changeLanguage();
+        };
     </script>
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
-</html>
 
+</html>
